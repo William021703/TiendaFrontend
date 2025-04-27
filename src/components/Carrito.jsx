@@ -11,7 +11,7 @@ export function Carrito() {
 
   useEffect(() => {
     let id = parseInt(JSON.parse(localStorage.getItem("usuario")).id);
-    fetch(`https://tienda-production-852a.up.railway.app/${id}`)
+    fetch(`https://tienda-production-852a.up.railway.app/carrito/:${id}`)
       .then((result) => {
         return result.json();
       })
