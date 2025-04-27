@@ -187,7 +187,7 @@ export function ShoppingCar() {
     let id = parseInt(JSON.parse(localStorage.getItem("usuario")).id);
     setArticulos([]);
 
-    fetch(`https://tienda-production-852a.up.railway.app/${id}`, {
+    fetch(`https://tienda-production-852a.up.railway.app/eliminarTodo/:${id}`, {
       method: "DELETE",
       headers: {
         "Content-type": "application/json",
