@@ -11,7 +11,7 @@ export function Carrito() {
 
   useEffect(() => {
     let id = parseInt(JSON.parse(localStorage.getItem("usuario")).id);
-    fetch(`http://localhost:3020/carrito/${id}`)
+    fetch(`https://tienda-production-852a.up.railway.app/${id}`)
       .then((result) => {
         return result.json();
       })
@@ -45,7 +45,7 @@ export function Carrito() {
     let id = parseInt(JSON.parse(localStorage.getItem("usuario")).id);
     setContadorArticulos([]);
 
-    fetch(`http://localhost:3020/eliminarTodo/${id}`, {
+    fetch(`https://tienda-production-852a.up.railway.app/${id}`, {
       method: "DELETE",
       headers: {
         "Content-type": "application/json",

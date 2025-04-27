@@ -36,7 +36,7 @@ export function Contenido() {
     const rol = parseInt(conseguirInformacionUsuario.rol_id);
     setPermisos(rol);
 
-    fetch(` http://localhost:3020/usuario/${id}`)
+    fetch(` https://tienda-production-852a.up.railway.app/${id}`)
       .then((resultado) => {
         return resultado.json();
       })
@@ -72,7 +72,7 @@ export function Contenido() {
       cantidad: parseInt(nuevoProducto.cantidad),
     };
     try {
-      fetch(`http://localhost:3020/crearProductos`, {
+      fetch(`https://tienda-production-852a.up.railway.app/crearProductos`, {
         method: "POST",
         headers: { "Content-type": "application/json" },
         body: JSON.stringify(obj),

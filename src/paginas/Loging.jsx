@@ -33,14 +33,17 @@ export function Loging() {
       return;
     }
     try {
-      const response = await fetch("http://localhost:3020/login", {
-        method: "POST",
-        headers: {
-          "Content-type": "application/json",
-        },
+      const response = await fetch(
+        "https://tienda-production-852a.up.railway.app/login",
+        {
+          method: "POST",
+          headers: {
+            "Content-type": "application/json",
+          },
 
-        body: JSON.stringify(logging),
-      });
+          body: JSON.stringify(logging),
+        }
+      );
 
       if (!response.ok) {
         const errorData = await response.json();
@@ -71,13 +74,16 @@ export function Loging() {
       alert("Todos los  campos son requeridos");
     }
     try {
-      const response = await fetch("http://localhost:3020/nuevoUsuario", {
-        method: "POST",
-        headers: {
-          "Content-type": "application/json",
-        },
-        body: JSON.stringify(nuevoUsuario),
-      });
+      const response = await fetch(
+        "https://tienda-production-852a.up.railway.app/nuevoUsuario",
+        {
+          method: "POST",
+          headers: {
+            "Content-type": "application/json",
+          },
+          body: JSON.stringify(nuevoUsuario),
+        }
+      );
       if (!response.ok) {
         const errorData = await response.json();
         throw new Error(errorData.message || "Error en el servidor");

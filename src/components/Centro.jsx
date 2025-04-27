@@ -11,7 +11,8 @@ export function Centro() {
   );
   const { setContadorArticulos } = useContext(DatosCarritoContext);
 
-  const urlProducots = "http://localhost:3020/productos";
+  const urlProducots =
+    "https://tienda-production-852a.up.railway.app/productos";
 
   useEffect(() => {
     fetch(urlProducots)
@@ -57,7 +58,8 @@ export function Centro() {
     );
   }
   //se enviara articulos al carrito. si es igual se modifica sino se agrega a la descripcion del carrito
-  const urlCarrito = "http://localhost:3020/actualizarCarrito";
+  const urlCarrito =
+    "https://tienda-production-852a.up.railway.app/actualizarCarrito";
 
   function HandleAgregar(articulo) {
     const conseguirInformacionUsuario = JSON.parse(
@@ -120,42 +122,68 @@ export function Centro() {
   }
 
   return (
-    <ul className="contenedor-centro">
-      {productoParaLaDescripcion.map((product) => (
-        <li className="contenedor-producto" key={product.producto_id}>
-          <img
-            src={product.img}
-            alt={product.nombre_producto}
-            style={{ width: "200px", height: "200px", objectFit: "cover" }}
-          />
-          <h1>{product.nombre_producto} </h1>
-          <h1></h1>
-          <h1>Precio: {product.precio}$ </h1>
-          <div>
-            <div className="button">
-              <Buton
-                clase="menos"
-                funcion={() => HandleMenos(product.producto_id)}
-                name="-"
+    <div>
+      <div
+        style={{
+          display: "flex",
+          background: "gray",
+          height: "100px",
+          top: "29px",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <input
+          style={{
+            display: "flex",
+            width: "600px",
+            height: "50px",
+            fontFamily: "-moz-initial",
+            fontSize: "30px",
+            borderRadius: "10px",
+            padding: "10px",
+          }}
+          type="text"
+        />
+      </div>
+      <div>
+        <ul className="contenedor-centro">
+          {productoParaLaDescripcion.map((product) => (
+            <li className="contenedor-producto" key={product.producto_id}>
+              <img
+                src={product.img}
+                alt={product.nombre_producto}
+                style={{ width: "200px", height: "200px", objectFit: "cover" }}
               />
-              <Buton
-                clase="mas"
-                funcion={() => HandleMas(product.producto_id)}
-                name="+"
-              />
-            </div>
-            <Buton
-              clase="agregar"
-              funcion={() => {
-                HandleAgregar(product);
-                setProducto(product);
-              }}
-              name="Agregar"
-            />
-          </div>
-        </li>
-      ))}
-    </ul>
+              <h1>{product.nombre_producto} </h1>
+              <h1></h1>
+              <h1>Precio: {product.precio}$ </h1>
+              <div>
+                <div className="button">
+                  <Buton
+                    clase="menos"
+                    funcion={() => HandleMenos(product.producto_id)}
+                    name="-"
+                  />
+                  <Buton
+                    clase="mas"
+                    funcion={() => HandleMas(product.producto_id)}
+                    name="+"
+                  />
+                </div>
+                <Buton
+                  clase="agregar"
+                  funcion={() => {
+                    HandleAgregar(product);
+                  }}
+                  name="Agregar"
+                />
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
   );
 }
 

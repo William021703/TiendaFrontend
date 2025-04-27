@@ -11,7 +11,7 @@
 }
 
 .contenedor-producto {
-  background-color: whitesmoke;
+  background-color: white;
   display: flex;
   flex-direction: column;
   justify-content: center;

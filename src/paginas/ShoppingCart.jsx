@@ -14,7 +14,7 @@ export function ShoppingCar() {
   const navigate = useNavigate();
   useEffect(() => {
     let id = parseInt(JSON.parse(localStorage.getItem("usuario")).id);
-    fetch(`http://localhost:3020/carrito/${id}`)
+    fetch(`https://tienda-production-852a.up.railway.app/carrito/${id}`)
       .then((result) => {
         return result.json();
       })
@@ -70,12 +70,15 @@ export function ShoppingCar() {
     }
     setArticulos(eliminar);
 
-    fetch(`http://localhost:3020/eliminar/${usuario_id}/${producto_id}`, {
-      method: "DELETE",
-      headers: {
-        "Content-type": "application/json",
-      },
-    })
+    fetch(
+      `https://tienda-production-852a.up.railway.app/eliminar/${usuario_id}/${producto_id}`,
+      {
+        method: "DELETE",
+        headers: {
+          "Content-type": "application/json",
+        },
+      }
+    )
       .then((response) => {
         if (!response.ok) {
           throw new Error("error con los articulos");
@@ -87,7 +90,8 @@ export function ShoppingCar() {
         console.error(error);
       });
   }
-  const urlCarrito = "http://localhost:3020/actualizarCarrito";
+  const urlCarrito =
+    "https://tienda-production-852a.up.railway.app/actualizarCarrito";
 
   useEffect(() => {
     if (!conseguirIdApi) {
@@ -158,7 +162,7 @@ export function ShoppingCar() {
       return ob;
     });
     console.log(obj);
-    fetch("http://localhost:3020/pagos", {
+    fetch("https://tienda-production-852a.up.railway.app/pagos", {
       method: "POST",
       headers: {
         "Content-type": "application/json",
@@ -183,7 +187,7 @@ export function ShoppingCar() {
     let id = parseInt(JSON.parse(localStorage.getItem("usuario")).id);
     setArticulos([]);
 
-    fetch(`http://localhost:3020/eliminarTodo/${id}`, {
+    fetch(`https://tienda-production-852a.up.railway.app/${id}`, {
       method: "DELETE",
       headers: {
         "Content-type": "application/json",
