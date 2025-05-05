@@ -36,7 +36,7 @@ export function Contenido() {
     const rol = parseInt(conseguirInformacionUsuario.rol_id);
     setPermisos(rol);
 
-    fetch(` https://tienda-production-852a.up.railway.app/${id}`)
+    fetch(` https://tienda-production-852a.up.railway.app/usuario/${id}`)
       .then((resultado) => {
         return resultado.json();
       })
