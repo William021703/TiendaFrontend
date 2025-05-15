@@ -51,11 +51,14 @@
   background-color: #66b3e3;
   font-size: 20px;
   text-align: center;
-  transition: ease 2ms;
+  transition: ease 12s;
 }
 
 .btn:hover {
   background-color: #2422e5;
+  transform: scaleX(2px);
+  box-shadow: 2px 4px 2px #000000;
+  border-color: #000000;
 }
 
 .contenedor-fullCrearUsuario {
