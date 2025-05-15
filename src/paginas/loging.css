@@ -48,9 +48,12 @@
   height: 50px;
   border: 15px;
   border-radius: 15px;
-  background-color: cornflowerblue;
+  background-color: DBF9B8;
   font-size: 20px;
   text-align: center;
+}
+
+.btn:hover {
 }
 
 .contenedor-fullCrearUsuario {
