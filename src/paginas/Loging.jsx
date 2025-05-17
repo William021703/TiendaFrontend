@@ -106,8 +106,8 @@ export function Loging() {
   return (
     <div className="formulario">
       <img
-        src="https://media.istockphoto.com/id/1333438263/es/foto/sala-de-juegos-por-la-noche-con-luz-de-ne%C3%B3n-silla-de-juegos-altavoces-y-monitor-de-computadora.jpg?s=1024x1024&w=is&k=20&c=Is4ztDkwq9iHLncMVWQamQyGi6xvFY5Jae9dBttxavk="
-        alt="img"
+        src="https://preview.redd.it/iwwxm91dq9o61.jpg?width=1080&crop=smart&auto=webp&s=16e24ddc28bcb7f48b8b28eb395155fd8887f079"
+        alt="one piece"
       />
       <form>
         <div className="form">
