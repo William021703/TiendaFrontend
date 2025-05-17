@@ -108,6 +108,10 @@ export function Loging() {
       <form>
         <div className="form">
           <div className="input">
+            <img
+              src="https://media.istockphoto.com/id/1333438263/es/foto/sala-de-juegos-por-la-noche-con-luz-de-ne%C3%B3n-silla-de-juegos-altavoces-y-monitor-de-computadora.jpg?s=1024x1024&w=is&k=20&c=Is4ztDkwq9iHLncMVWQamQyGi6xvFY5Jae9dBttxavk="
+              alt="img"
+            />
             <h1>Login</h1>
             <input
               placeholder="Usuario...."
