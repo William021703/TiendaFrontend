@@ -55,7 +55,7 @@
   background-color: #66b3e3;
   font-size: 20px;
   text-align: center;
-  transition: transform 1s ease, background-color 1s,
+  transition: transform 1.5s ease, background-color 1.4s,
     box-shadow 1.3s border-color 1.5s;
 }
 
