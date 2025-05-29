@@ -1,4 +1,8 @@
-# Logs
+# Dependencias
+node_modules/
+package-lock.json
+
+# Archivos de log
 logs
 *.log
 npm-debug.log*
@@ -7,12 +11,12 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
+# Builds
 dist
 dist-ssr
 *.local
 
-# Editor directories and files
+# Archivos del editor
 .vscode/*
 !.vscode/extensions.json
 .idea

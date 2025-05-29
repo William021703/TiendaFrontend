@@ -1,4 +1,3 @@
-import "./contenido.css";
 import { Centro } from "../components/Centro";
 import { TopNombre } from "../components/TopNombre";
 import { Carrito } from "../components/Carrito";
@@ -97,16 +96,16 @@ export function Contenido() {
   }
 
   return (
-    <div className="contenedor">
-      <div className="top">
+    <div>
+      <div>
         <TopNombre usuarioInfo={conseguirUsuarioId} />
         <h1>Ropa deportiva</h1>
         <Carrito />
       </div>
-      <div className="centro">
+      <div>
         <Centro />
       </div>
-      <div className="footer">
+      <div>
         {permisos != 4 && (
           <div>
             {abrirCerrar ? (

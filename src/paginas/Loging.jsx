@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./loging.css";
+
 import { useNavigate } from "react-router-dom";
 import { CrearUsuario } from "../components/CrearUsuario";
 
@@ -104,18 +104,26 @@ export function Loging() {
   }
 
   return (
-    <div className="formulario">
-      <img
-        src="https://preview.redd.it/iwwxm91dq9o61.jpg?width=1080&crop=smart&auto=webp&s=16e24ddc28bcb7f48b8b28eb395155fd8887f079"
-        alt="one piece"
-      />
+    <div className="w-full h-screen bg-stone-700 relative ">
+      <div className="w-4 h-4 bor bg-cyan-50 rounded-full absolute"></div>
+      <div className="w-2 h-2 bg-cyan-50 rounded-full absolute"></div>
+      <div className="w-2 h-2 bg-cyan-50 rounded-full absolute"></div>
+      <div className="w-2 h-2 bg-cyan-50 rounded-full absolute"></div>
+      <div className="w-2 h-2 bg-cyan-50 rounded-full absolute"></div>
+      <div className="w-2 h-2 bg-cyan-50 rounded-full absolute"></div>
+      <div className="w-2 h-2 bg-cyan-50 rounded-full absolute"></div>
+      <div className="w-2 h-2 bg-cyan-50 rounded-full absolute"></div>
+      <div className="w-2 h-2 bg-cyan-50 rounded-full absolute"></div>
+      <div className="w-2 h-2 bg-cyan-50 rounded-full absolute"></div>
+      <div className="w-2 h-2 bg-cyan-50 rounded-full absolute"></div>
+      <div className="w-2 h-2 bg-cyan-50 rounded-full absolute"></div>
+
       <form>
-        <div className="form">
-          <div className="input">
+        <div>
+          <div>
             <h1>Login</h1>
             <input
               placeholder="Usuario...."
-              className="input-text"
               type="text"
               name="nombre"
               value={logging.nombre}
@@ -123,7 +131,6 @@ export function Loging() {
             />
 
             <input
-              className="input-text"
               placeholder="Password....."
               type="password"
               name="contrasena"
@@ -131,24 +138,17 @@ export function Loging() {
               onChange={HandleLoggin}
             />
 
-            <button className="btn" type="submit" onClick={Login}>
+            <button type="submit" onClick={Login}>
               Iniciar Sesion
             </button>
           </div>
         </div>
       </form>
-      <span
-        style={{
-          position: "absolute",
-          bottom: "110px",
-          cursor: "grab",
-        }}
-        onClick={HandleAbrirCerrar}
-      >
+      <span onClick={HandleAbrirCerrar}>
         {!abrirCerrar ? (
           "Crear usuario"
         ) : (
-          <div className="contenedor-fullCrearUsuario">
+          <div>
             <span onClick={HandleAbrirCerrar}>
               <CrearUsuario
                 nuevoUsuario={nuevoUsuario}

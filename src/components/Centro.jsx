@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import "./centro.css";
+
 import { Buton } from "./Buton";
 import { useContext } from "react";
 import { DatosCarritoContext } from "../componentesfail/DatosParaCarrito";

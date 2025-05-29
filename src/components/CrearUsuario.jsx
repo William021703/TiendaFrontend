@@ -1,6 +1,3 @@
-import { useState } from "react";
-import "./crearUsuario.css";
-
 export function CrearUsuario({
   nuevoUsuario,
   setNuevoUsuario,
