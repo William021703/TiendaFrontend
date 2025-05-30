@@ -104,9 +104,12 @@ export function Loging() {
   }
 
   return (
-    <div className="w-full h-screen bg-stone-700 relative ">
-      <div className="w-4 h-4 bor bg-cyan-50 rounded-full absolute"></div>
-      <div className="w-2 h-2 bg-cyan-50 rounded-full absolute"></div>
+    <div className="w-full h-screen bg-slate-800 relative ">
+
+     <div className="size-96 rounded-full bg-radial-[at_25%_25%] from-white to-zinc-900 to-75% absolute bottom-60 right-28 animate-[pulse_5s_ease_infinite]"></div>
+
+      <div className="w-8 h-8 bg-cyan-50 border-4 blur-sm border-indigo-600 rounded-full shadow-[0_0_10px_#4F46E5] absolute left-96"></div>
+      <div className="w-8 h-8 bg-cyan-50 rounded-full absolute left-96 top-14 "></div>
       <div className="w-2 h-2 bg-cyan-50 rounded-full absolute"></div>
       <div className="w-2 h-2 bg-cyan-50 rounded-full absolute"></div>
       <div className="w-2 h-2 bg-cyan-50 rounded-full absolute"></div>

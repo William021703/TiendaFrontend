@@ -71,7 +71,7 @@ export function Contenido() {
       cantidad: parseInt(nuevoProducto.cantidad),
     };
     try {
-      fetch(`https://tienda-production-852a.up.railway.app/crearProductos`, {
+      fetch(`https://tienda-production-852a.up.railway.app/crearProductos`,{
         method: "POST",
         headers: { "Content-type": "application/json" },
         body: JSON.stringify(obj),
