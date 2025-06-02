@@ -10,7 +10,6 @@ export function Rutas() {
       <Route path="/" element={<Loging />} />
       <Route path="/productos" element={<Contenido />} />
       <Route path="/carrito" element={<ShoppingCar />} />
-      <Route path="/registrarse" element={<CrearUsuario />} />
     </Routes>
   );
 }

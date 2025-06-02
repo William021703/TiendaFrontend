@@ -14,7 +14,7 @@ export function Loging() {
     contrasena: "",
     rol_id: 4,
   });
-  const [abrirCerrar, setAbrirCerrar] = useState(false);
+  const [abrirCerrar, setAbrirCerrar] = useState(true);
   const [registrarse, setRegistrarse] = useState(false);
 
   const navigate = useNavigate();
@@ -63,14 +63,15 @@ export function Loging() {
 
   function HandleAbrirCerrar() {
     setAbrirCerrar(true);
+    setRegistrarse(true);
   }
 
   async function HandleCrearUsuario(e) {
     e.preventDefault();
     if (
-      nuevoUsuario.nombre == "" ||
-      nuevoUsuario.apellido == "" ||
-      nuevoUsuario.contrasena == ""
+      nuevoUsuario.nombre === "" ||
+      nuevoUsuario.apellido === "" ||
+      nuevoUsuario.contrasena ===""
     ) {
       alert("Todos los  campos son requeridos");
       return;
@@ -104,9 +105,7 @@ export function Loging() {
       console.error(error);
     }
   }
-  function cambiarHandle() {
-    navigate("/registrarse");
-  }
+ console.log(registrarse)
   return (
     <div>
       <div className="w-full h-screen bg-linear-to-r from-cyan-500 to-blue-500 relative">
@@ -130,7 +129,13 @@ export function Loging() {
         <div className="w-3 h-3 bg-white rounded-full absolute left-[5%] top-[10%] shadow-[0_0_15px_5px_white] before:content-[''] before:absolute before:w-12 before:h-[2px] before:bg-gradient-to-r before:from-white before:to-transparent before:top-1/2 before:left-full before:translate-y-[-50%] elemento-animado"></div>
         <div className="w-3 h-3 bg-white rounded-full absolute left-[30%] top-[50%] shadow-[0_0_15px_5px_white] before:content-[''] before:absolute before:w-12 before:h-[2px] before:bg-gradient-to-r before:from-white before:to-transparent before:top-1/2 before:left-full before:translate-y-[-50%] elemento-animado"></div>
 
-        {registrarse? <CrearUsuario/> : <div className="bg-blur-xs backdrop-blur w-[360px] max-w-full flex flex-col absolute left-1/2 top-[25%] -translate-x-1/2 z-10 rounded-2xl p-6 items-center shadow-xl animate-pulse">
+        {registrarse ?  <CrearUsuario
+                  nuevoUsuario={nuevoUsuario}
+                  setNuevoUsuario={setNuevoUsuario}
+                  funcion={HandleCrearUsuario}
+                  setRegistrarse={setRegistrarse}
+                  setAbrirCerrar={setAbrirCerrar}
+                /> : <div className="bg-blur-xs backdrop-blur w-[360px] max-w-full flex flex-col absolute left-1/2 top-[25%] -translate-x-1/2 z-10 rounded-2xl p-6 items-center shadow-xl animate-pulse">
           <div>
             <h1 className="text-3xl">Login</h1>
           </div>
@@ -181,24 +186,16 @@ export function Loging() {
           </div>
           <div>
             <div>
-              {!abrirCerrar ? (
-                <button
+              {abrirCerrar && (  <button
                   onClick={() => {
                     HandleAbrirCerrar();
-                    cambiarHandle();
+                    
                   }}
                   className="w-60 h-10 border-2 rounded-xl  bg-linear-to-r from-cyan-500 to-blue-500 hover:bg-linear-65 hover:from-purple-500 hover:to-pink-500 transition "
                 >
                   Crear Usuario
                 </button>
-              ) : (
-                <CrearUsuario
-                  nuevoUsuario={nuevoUsuario}
-                  setNuevoUsuario={setNuevoUsuario}
-                  HandleCrearUsuario={HandleCrearUsuario}
-                  setAbrirCerrar={setAbrirCerrar}
-                  HandleAbrirCerrar={HandleAbrirCerrar}
-                />
+               
               )}
             </div>
           </div>

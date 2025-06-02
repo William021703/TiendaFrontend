@@ -1,13 +1,16 @@
-import { useNavigate } from "react-router-dom";
+
 export function CrearUsuario({
   nuevoUsuario,
   setNuevoUsuario,
   HandleCrearUsuario,
-  setAbrirCerrar,
+  setAbrirCerrar, setRegistrarse,
 }) {
-  const navigate = useNavigate();
+ 
+  
   function HandleCerrar() {
-    navigate("/");
+    setRegistrarse(false)
+    setAbrirCerrar(true)
+    console.log('hola mundo')
   }
 
   function HandleInputChange(e) {
@@ -16,20 +19,21 @@ export function CrearUsuario({
       ...prev,
       [name]: value,
     }));
+    console.log('hola mundo')
   }
 
   return (
     <div className="w-full h-screen flex flex-col relative items-center justify-center bg-radial-[at_50%_75%] from-sky-200 via-blue-400 to-indigo-900 to-90% z-10  ">
-      <div className="w-full flex justify-end ">
-        <button
+      
+        <button type="button"
           onClick={HandleCerrar}
-          className="text-xl font-bold text-red-500 hover:text-red-700 absolute right-[35%]"
+          className="text-xl font-bold w-60 h-10 rounded-2xl bg-radial-[at_50%_75%] from-sky-200 via-blue-400 to-indigo-900 to-90% absolute left-[44%] bottom-[25%] "
         >
           Cerrar
         </button>
-      </div>
+     
 
-      <form className="w-96 h-96 flex border-2 flex-col justify-evenly items-center">
+      <form className="w-96 h-96 flex rounded-2xl border-transparent  flex-col justify-evenly items-center shadow-xl animate-pulse">
         <div className="flex flex-col gap-1.5">
           <label className="text-2xl px-4" htmlFor="nombre">
             Nombre
