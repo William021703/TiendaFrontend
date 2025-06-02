@@ -104,55 +104,86 @@ export function Loging() {
   }
 
   return (
-    <div className="w-full h-screen bg-slate-800 relative ">
+    <div className="w-full h-screen bg-linear-to-r from-cyan-500 to-blue-500 relative">
+      <div className="size-96 rounded-full bg-radial-[at_25%_25%] from-white to-zinc-900 to-75% absolute left-[50%] top-30 animate-spin "></div>
+      <div className="w-3 h-3 bg-white rounded-full absolute left-[69%] top-[50%] shadow-[0_0_15px_5px_white] before:content-[''] before:absolute before:w-12 before:h-[2px] before:bg-gradient-to-r before:from-white before:to-transparent before:top-1/2 before:left-full before:translate-y-[-50%] elemento-animado "></div>
+      <div className="w-3 h-3 bg-white rounded-full absolute left-[30%] top-[29%] shadow-[0_0_15px_5px_white] before:content-[''] before:absolute before:w-12 before:h-[2px] before:bg-gradient-to-r before:from-white before:to-transparent before:top-1/2 before:left-full before:translate-y-[-50%] elemento-animado"></div>
+      <div className="w-3 h-3 bg-white rounded-full absolute left-[90%] top-[78%] shadow-[0_0_15px_5px_white] before:content-[''] before:absolute before:w-12 before:h-[2px] before:bg-gradient-to-r before:from-white before:to-transparent before:top-1/2 before:left-full before:translate-y-[-50%] elemento-animado"></div>
+      <div className="w-3 h-3 bg-white rounded-full absolute left-[9%] top-[48%] shadow-[0_0_15px_5px_white] before:content-[''] before:absolute before:w-12 before:h-[2px] before:bg-gradient-to-r before:from-white before:to-transparent before:top-1/2 before:left-full before:translate-y-[-50%] elemento-animado"></div>
+      <div className="w-3 h-3 bg-white rounded-full absolute left-[80%] top-[95%] shadow-[0_0_15px_5px_white] before:content-[''] before:absolute before:w-12 before:h-[2px] before:bg-gradient-to-r before:from-white before:to-transparent before:top-1/2 before:left-full before:translate-y-[-50%]  elemento-animado"></div>
+      <div className="w-3 h-3 bg-white rounded-full absolute left-[20%] top-[65%] shadow-[0_0_15px_5px_white] before:content-[''] before:absolute before:w-12 before:h-[2px] before:bg-gradient-to-r before:from-white before:to-transparent before:top-1/2 before:left-full before:translate-y-[-50%] elemento-animado"></div>
+      <div className="w-3 h-3 bg-white rounded-full absolute left-[68%] top-[80%] shadow-[0_0_15px_5px_white] before:content-[''] before:absolute before:w-12 before:h-[2px] before:bg-gradient-to-r before:from-white before:to-transparent before:top-1/2 before:left-full before:translate-y-[-50%] elemento-animado"></div>
+      <div className="w-3 h-3 bg-white rounded-full absolute left-[55%] top-[20%] shadow-[0_0_15px_5px_white] before:content-[''] before:absolute before:w-12 before:h-[2px] before:bg-gradient-to-r before:from-white before:to-transparent before:top-1/2 before:left-full before:translate-y-[-50%] elemento-animado"></div>
+      <div className="w-3 h-3 bg-white rounded-full absolute left-[40%] top-[35%] shadow-[0_0_15px_5px_white] before:content-[''] before:absolute before:w-12 before:h-[2px] before:bg-gradient-to-r before:from-white before:to-transparent before:top-1/2 before:left-full before:translate-y-[-50%] elemento-animado"></div>
+      <div className="w-3 h-3 bg-white rounded-full absolute left-[1%] top-[15%] shadow-[0_0_15px_5px_white] before:content-[''] before:absolute before:w-12 before:h-[2px] before:bg-gradient-to-r before:from-white before:to-transparent before:top-1/2 before:left-full before:translate-y-[-50%] elemento-animado"></div>
+      <div className="w-3 h-3 bg-white rounded-full absolute left-[60%] top-[45%] shadow-[0_0_15px_5px_white] before:content-[''] before:absolute before:w-12 before:h-[2px] before:bg-gradient-to-r before:from-white before:to-transparent before:top-1/2 before:left-full before:translate-y-[-50%] elemento-animado"></div>
+      <div className="w-3 h-3 bg-white rounded-full absolute left-[10%] top-[70%] shadow-[0_0_15px_5px_white] before:content-[''] before:absolute before:w-12 before:h-[2px] before:bg-gradient-to-r before:from-white before:to-transparent before:top-1/2 before:left-full before:translate-y-[-50%] elemento-animado"></div>
+      <div className="w-3 h-3 bg-white rounded-full absolute left-[79%] top-[90%] shadow-[0_0_15px_5px_white] before:content-[''] before:absolute before:w-12 before:h-[2px] before:bg-gradient-to-r before:from-white before:to-transparent before:top-1/2 before:left-full before:translate-y-[-50%] elemento-animado"></div>
+      <div className="w-3 h-3 bg-white rounded-full absolute left-[86%] top-[60%] shadow-[0_0_15px_5px_white] before:content-[''] before:absolute before:w-12 before:h-[2px] before:bg-gradient-to-r before:from-white before:to-transparent before:top-1/2 before:left-full before:translate-y-[-50%] elemento-animado"></div>
+      <div className="w-3 h-3 bg-white rounded-full absolute left-[50%] top-[40%] shadow-[0_0_15px_5px_white] before:content-[''] before:absolute before:w-12 before:h-[2px] before:bg-gradient-to-r before:from-white before:to-transparent before:top-1/2 before:left-full before:translate-y-[-50%] elemento-animado"></div>
+      <div className="w-3 h-3 bg-white rounded-full absolute left-[18%] top-[30%] shadow-[0_0_15px_5px_white] before:content-[''] before:absolute before:w-12 before:h-[2px] before:bg-gradient-to-r before:from-white before:to-transparent before:top-1/2 before:left-full before:translate-y-[-50%] elemento-animado"></div>
+      <div className="w-3 h-3 bg-white rounded-full absolute left-[5%] top-[10%] shadow-[0_0_15px_5px_white] before:content-[''] before:absolute before:w-12 before:h-[2px] before:bg-gradient-to-r before:from-white before:to-transparent before:top-1/2 before:left-full before:translate-y-[-50%] elemento-animado"></div>
+      <div className="w-3 h-3 bg-white rounded-full absolute left-[30%] top-[50%] shadow-[0_0_15px_5px_white] before:content-[''] before:absolute before:w-12 before:h-[2px] before:bg-gradient-to-r before:from-white before:to-transparent before:top-1/2 before:left-full before:translate-y-[-50%] elemento-animado"></div>
 
-     <div className="size-96 rounded-full bg-radial-[at_25%_25%] from-white to-zinc-900 to-75% absolute bottom-60 right-28 animate-[pulse_5s_ease_infinite]"></div>
-
-      <div className="w-8 h-8 bg-cyan-50 border-4 blur-sm border-indigo-600 rounded-full shadow-[0_0_10px_#4F46E5] absolute left-96"></div>
-      <div className="w-8 h-8 bg-cyan-50 rounded-full absolute left-96 top-14 "></div>
-      <div className="w-2 h-2 bg-cyan-50 rounded-full absolute"></div>
-      <div className="w-2 h-2 bg-cyan-50 rounded-full absolute"></div>
-      <div className="w-2 h-2 bg-cyan-50 rounded-full absolute"></div>
-      <div className="w-2 h-2 bg-cyan-50 rounded-full absolute"></div>
-      <div className="w-2 h-2 bg-cyan-50 rounded-full absolute"></div>
-      <div className="w-2 h-2 bg-cyan-50 rounded-full absolute"></div>
-      <div className="w-2 h-2 bg-cyan-50 rounded-full absolute"></div>
-      <div className="w-2 h-2 bg-cyan-50 rounded-full absolute"></div>
-      <div className="w-2 h-2 bg-cyan-50 rounded-full absolute"></div>
-      <div className="w-2 h-2 bg-cyan-50 rounded-full absolute"></div>
-
-      <form>
+      <div className="bg-blur-xs backdrop-blur w-[360px] max-w-full flex flex-col absolute left-1/2 top-[25%] -translate-x-1/2 z-10 rounded-2xl p-6 items-center shadow-xl animate-pulse">
         <div>
-          <div>
-            <h1>Login</h1>
-            <input
-              placeholder="Usuario...."
-              type="text"
-              name="nombre"
-              value={logging.nombre}
-              onChange={HandleLoggin}
-            />
-
-            <input
-              placeholder="Password....."
-              type="password"
-              name="contrasena"
-              value={logging.contrasena}
-              onChange={HandleLoggin}
-            />
-
-            <button type="submit" onClick={Login}>
-              Iniciar Sesion
-            </button>
-          </div>
+          <h1 className="text-3xl">Login</h1>
         </div>
-      </form>
-      <span onClick={HandleAbrirCerrar}>
-        {!abrirCerrar ? (
-          "Crear usuario"
-        ) : (
-          <div>
-            <span onClick={HandleAbrirCerrar}>
+        <div>
+          <form
+            className="w-80 h-80 flex flex-col 
+
+"
+          >
+            <div>
+              <div className=" bg-transparent w-full h-80 flex flex-col justify-evenly items-center ">
+                <div className="flex flex-col gap-1.5">
+                  <label className="text-2xl px-4" htmlFor="nombre">
+                    Usuario
+                  </label>
+                  <input
+                    type="text"
+                    name="nombre"
+                    value={logging.nombre}
+                    onChange={HandleLoggin}
+                    className="w-60 h-10 px-4 border-0 border-b-2 border-blue-500 focus:border-blue-500 focus:outline-none text-2xl"
+                  />
+                </div>
+
+                <div className="flex flex-col gap-1.5">
+                  <label className="text-2xl px-4" htmlFor="password">
+                    Password
+                  </label>
+                  <input
+                    type="password"
+                    name="contrasena"
+                    value={logging.contrasena}
+                    onChange={HandleLoggin}
+                    className="w-60 h-10 px-4 border-0 border-b-2 border-blue-500 focus:border-blue-500 focus:outline-none text-2xl"
+                  />
+                </div>
+
+                <button
+                  className="w-60 h-10 border-2 rounded-xl  bg-linear-to-r from-cyan-500 to-blue-500 hover:bg-linear-65 hover:from-purple-500 hover:to-pink-500 transition "
+                  type="submit"
+                  onClick={Login}
+                >
+                  Iniciar Sesion
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div>
+          <div className="w-full h-10">
+            {!abrirCerrar ? (
+              <button
+                onClick={HandleAbrirCerrar}
+                className="w-60 h-10 border-2 rounded-xl  bg-linear-to-r from-cyan-500 to-blue-500 hover:bg-linear-65 hover:from-purple-500 hover:to-pink-500 transition "
+              >
+                Crear Usuario
+              </button>
+            ) : (
               <CrearUsuario
                 nuevoUsuario={nuevoUsuario}
                 setNuevoUsuario={setNuevoUsuario}
@@ -160,10 +191,10 @@ export function Loging() {
                 setAbrirCerrar={setAbrirCerrar}
                 HandleAbrirCerrar={HandleAbrirCerrar}
               />
-            </span>
+            )}
           </div>
-        )}
-      </span>
+        </div>
+      </div>
     </div>
   );
 }
