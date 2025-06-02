@@ -15,6 +15,7 @@ export function Loging() {
     rol_id: 4,
   });
   const [abrirCerrar, setAbrirCerrar] = useState(false);
+  const [registrarse, setRegistrarse] = useState(false);
 
   const navigate = useNavigate();
 
@@ -129,7 +130,7 @@ export function Loging() {
         <div className="w-3 h-3 bg-white rounded-full absolute left-[5%] top-[10%] shadow-[0_0_15px_5px_white] before:content-[''] before:absolute before:w-12 before:h-[2px] before:bg-gradient-to-r before:from-white before:to-transparent before:top-1/2 before:left-full before:translate-y-[-50%] elemento-animado"></div>
         <div className="w-3 h-3 bg-white rounded-full absolute left-[30%] top-[50%] shadow-[0_0_15px_5px_white] before:content-[''] before:absolute before:w-12 before:h-[2px] before:bg-gradient-to-r before:from-white before:to-transparent before:top-1/2 before:left-full before:translate-y-[-50%] elemento-animado"></div>
 
-        <div className="bg-blur-xs backdrop-blur w-[360px] max-w-full flex flex-col absolute left-1/2 top-[25%] -translate-x-1/2 z-10 rounded-2xl p-6 items-center shadow-xl animate-pulse">
+        {registrarse? <CrearUsuario/> : <div className="bg-blur-xs backdrop-blur w-[360px] max-w-full flex flex-col absolute left-1/2 top-[25%] -translate-x-1/2 z-10 rounded-2xl p-6 items-center shadow-xl animate-pulse">
           <div>
             <h1 className="text-3xl">Login</h1>
           </div>
@@ -201,7 +202,7 @@ export function Loging() {
               )}
             </div>
           </div>
-        </div>
+        </div>}
       </div>
     </div>
   );
