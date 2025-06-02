@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Loging } from "../paginas/Loging";
 import { Contenido } from "../paginas/Contenido";
 import { ShoppingCar } from "../paginas/ShoppingCart";
+import { CrearUsuario } from "../components/CrearUsuario";
 
 export function Rutas() {
   return (
@@ -9,6 +10,7 @@ export function Rutas() {
       <Route path="/" element={<Loging />} />
       <Route path="/productos" element={<Contenido />} />
       <Route path="/carrito" element={<ShoppingCar />} />
+      <Route path="/registrarse" element={<CrearUsuario />} />
     </Routes>
   );
 }

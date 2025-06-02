@@ -1,12 +1,15 @@
+import { useNavigate } from "react-router-dom";
 export function CrearUsuario({
   nuevoUsuario,
   setNuevoUsuario,
   HandleCrearUsuario,
   setAbrirCerrar,
 }) {
+  const navigate = useNavigate();
   function HandleCerrar() {
-    setAbrirCerrar(false);
+    navigate("/");
   }
+
   function HandleInputChange(e) {
     const { name, value } = e.target;
     setNuevoUsuario((prev) => ({
@@ -16,47 +19,63 @@ export function CrearUsuario({
   }
 
   return (
-    <div className="contenedor-crearUsuario">
-      <form>
-        <div className="form-crearUsuario">
-          <div className="input-crearUsuario">
-            <button className="btn-cerrar" onClick={HandleCerrar}>
-              x
-            </button>
-            <input
-              className="input-text-crearUsuario"
-              placeholder="nombre..."
-              type="text"
-              name="nombre"
-              onChange={HandleInputChange}
-              value={nuevoUsuario.nombre}
-            />
-            <input
-              className="input-text-crearUsuario"
-              placeholder="apellido..."
-              type="text"
-              name="apellido"
-              onChange={HandleInputChange}
-              value={nuevoUsuario.apellido}
-            />
+    <div className="w-full h-screen flex flex-col relative items-center justify-center bg-radial-[at_50%_75%] from-sky-200 via-blue-400 to-indigo-900 to-90% z-10  ">
+      <div className="w-full flex justify-end ">
+        <button
+          onClick={HandleCerrar}
+          className="text-xl font-bold text-red-500 hover:text-red-700 absolute right-[35%]"
+        >
+          Cerrar
+        </button>
+      </div>
 
-            <input
-              className="input-text-crearUsuario"
-              placeholder="password..."
-              type="password"
-              name="contrasena"
-              onChange={HandleInputChange}
-              value={nuevoUsuario.contrasena}
-            />
-            <button
-              className="btn-crearUsuario"
-              type="submit"
-              onClick={HandleCrearUsuario}
-            >
-              Crear usuario
-            </button>
-          </div>
+      <form className="w-96 h-96 flex border-2 flex-col justify-evenly items-center">
+        <div className="flex flex-col gap-1.5">
+          <label className="text-2xl px-4" htmlFor="nombre">
+            Nombre
+          </label>
+          <input
+            type="text"
+            name="nombre"
+            value={nuevoUsuario ? nuevoUsuario.nombre : ""}
+            onChange={HandleInputChange}
+            className="w-60 h-10 px-4 border-0 border-b-2 border-blue-500 focus:outline-none text-2xl"
+          />
         </div>
+
+        <div className="flex flex-col gap-1.5">
+          <label className="text-2xl px-4" htmlFor="apellido">
+            Apellido
+          </label>
+          <input
+            type="text"
+            name="apellido"
+            value={nuevoUsuario ? nuevoUsuario.apellido : ""}
+            onChange={HandleInputChange}
+            className="w-60 h-10 px-4 border-0 border-b-2 border-blue-500 focus:outline-none text-2xl"
+          />
+        </div>
+
+        <div className="flex flex-col gap-1.5">
+          <label className="text-2xl px-4" htmlFor="contrasena">
+            Password
+          </label>
+          <input
+            type="password"
+            name="contrasena"
+            value={nuevoUsuario ? nuevoUsuario.contrasena : ""}
+            onChange={HandleInputChange}
+            className="w-60 h-10 px-4 border-0 border-b-2 border-blue-500 focus:outline-none text-2xl"
+          />
+        </div>
+
+        <button
+          type="submit"
+          onClick={HandleCrearUsuario}
+          className="w-60 h-10 border-2 rounded-xl mt-2 bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-purple-500 hover:to-pink-500 transition"
+        >
+          Crear usuario
+        </button>
       </form>
     </div>
   );
