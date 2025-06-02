@@ -37,7 +37,7 @@ export function CrearUsuario({
           <input
             type="text"
             name="nombre"
-            value={nuevoUsuario ? nuevoUsuario.nombre : ""}
+            value={ nuevoUsuario.nombre }
             onChange={HandleInputChange}
             className="w-60 h-10 px-4 border-0 border-b-2 border-blue-500 focus:outline-none text-2xl"
           />
@@ -50,7 +50,7 @@ export function CrearUsuario({
           <input
             type="text"
             name="apellido"
-            value={nuevoUsuario ? nuevoUsuario.apellido : ""}
+            value={ nuevoUsuario.apellido }
             onChange={HandleInputChange}
             className="w-60 h-10 px-4 border-0 border-b-2 border-blue-500 focus:outline-none text-2xl"
           />
@@ -63,7 +63,7 @@ export function CrearUsuario({
           <input
             type="password"
             name="contrasena"
-            value={nuevoUsuario ? nuevoUsuario.contrasena : ""}
+            value={nuevoUsuario.contrasena }
             onChange={HandleInputChange}
             className="w-60 h-10 px-4 border-0 border-b-2 border-blue-500 focus:outline-none text-2xl"
           />
