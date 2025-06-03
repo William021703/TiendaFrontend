@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { useNavigate } from "react-router-dom";
 import { CrearUsuario } from "../components/CrearUsuario";
@@ -18,6 +18,17 @@ export function Loging() {
   const [registrarse, setRegistrarse] = useState(false);
 
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const conseguirInformacionUsuario = JSON.parse(
+      localStorage.getItem("usuario")
+    );
+    const id = parseInt(conseguirInformacionUsuario.id);
+    if (conseguirInformacionUsuario && id) {
+      navigate("/productos");
+      return;
+    }
+  }, []);
 
   function HandleLoggin(e) {
     const { name, value } = e.target;
@@ -133,7 +144,7 @@ export function Loging() {
           <CrearUsuario
             nuevoUsuario={nuevoUsuario}
             setNuevoUsuario={setNuevoUsuario}
-            funcion={HandleCrearUsuario}
+            HandleCrearUsuario={HandleCrearUsuario}
             setRegistrarse={setRegistrarse}
             setAbrirCerrar={setAbrirCerrar}
           />
