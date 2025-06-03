@@ -1,16 +1,14 @@
-
 export function CrearUsuario({
   nuevoUsuario,
   setNuevoUsuario,
   HandleCrearUsuario,
-  setAbrirCerrar, setRegistrarse,
+  setAbrirCerrar,
+  setRegistrarse,
 }) {
- 
-  
   function HandleCerrar() {
-    setRegistrarse(false)
-    setAbrirCerrar(true)
-    console.log('hola mundo')
+    setRegistrarse(false);
+    setAbrirCerrar(true);
+    console.log("hola mundo");
   }
 
   function HandleInputChange(e) {
@@ -19,19 +17,18 @@ export function CrearUsuario({
       ...prev,
       [name]: value,
     }));
-    console.log('hola mundo')
+    console.log("hola mundo");
   }
 
   return (
-    <div className="w-full h-screen flex flex-col relative items-center justify-center bg-radial-[at_50%_75%] from-sky-200 via-blue-400 to-indigo-900 to-90% z-10  ">
-      
-        <button type="button"
-          onClick={HandleCerrar}
-          className="text-xl font-bold w-60 h-10 rounded-2xl bg-radial-[at_50%_75%] from-sky-200 via-blue-400 to-indigo-900 to-90% absolute left-[44%] bottom-[25%] "
-        >
-          Cerrar
-        </button>
-     
+    <div className="w-full h-screen max-sm:flex-col flex flex-col relative items-center justify-center bg-radial-[at_50%_75%] from-sky-200 via-blue-400 to-indigo-900 to-90% z-10  ">
+      <button
+        type="button"
+        onClick={HandleCerrar}
+        className="text-xl font-bold w-60 h-10 rounded-2xl bg-radial-[at_50%_75%] from-sky-200 via-blue-400 to-indigo-900 to-90%  left-0.5 "
+      >
+        Cerrar
+      </button>
 
       <form className="w-96 h-96 flex rounded-2xl border-transparent  flex-col justify-evenly items-center shadow-xl animate-pulse">
         <div className="flex flex-col gap-1.5">
@@ -41,7 +38,7 @@ export function CrearUsuario({
           <input
             type="text"
             name="nombre"
-            value={ nuevoUsuario.nombre }
+            value={nuevoUsuario.nombre}
             onChange={HandleInputChange}
             className="w-60 h-10 px-4 border-0 border-b-2 border-blue-500 focus:outline-none text-2xl"
           />
@@ -54,7 +51,7 @@ export function CrearUsuario({
           <input
             type="text"
             name="apellido"
-            value={ nuevoUsuario.apellido }
+            value={nuevoUsuario.apellido}
             onChange={HandleInputChange}
             className="w-60 h-10 px-4 border-0 border-b-2 border-blue-500 focus:outline-none text-2xl"
           />
@@ -67,7 +64,7 @@ export function CrearUsuario({
           <input
             type="password"
             name="contrasena"
-            value={nuevoUsuario.contrasena }
+            value={nuevoUsuario.contrasena}
             onChange={HandleInputChange}
             className="w-60 h-10 px-4 border-0 border-b-2 border-blue-500 focus:outline-none text-2xl"
           />
