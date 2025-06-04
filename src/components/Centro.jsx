@@ -123,13 +123,33 @@ export function Centro() {
 
   return (
     <div>
-      <div>
-        <input type="text" />
+      <div
+        style={{
+          display: "flex",
+          background: "gray",
+          height: "100px",
+          top: "29px",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <input
+          style={{
+            display: "flex",
+            width: "600px",
+            height: "50px",
+            fontFamily: "-moz-initial",
+            fontSize: "30px",
+            borderRadius: "10px",
+            padding: "10px",
+          }}
+          type="text"
+        />
       </div>
       <div>
-        <ul>
+        <ul className="contenedor-centro">
           {productoParaLaDescripcion.map((product) => (
-            <li key={product.producto_id}>
+            <li className="contenedor-producto" key={product.producto_id}>
               <img
                 src={product.img}
                 alt={product.nombre_producto}
@@ -139,7 +159,7 @@ export function Centro() {
               <h1></h1>
               <h1>Precio: {product.precio}$ </h1>
               <div>
-                <div>
+                <div className="button">
                   <Buton
                     clase="menos"
                     funcion={() => HandleMenos(product.producto_id)}
