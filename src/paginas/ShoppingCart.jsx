@@ -152,6 +152,7 @@ export function ShoppingCar() {
   }, [articulos]);
 
   function HandlePagar() {
+    HandleVaciarCarrito();
     let obj = articulos.map((item) => {
       let ob = {
         nombre: item.nombre_producto,
@@ -178,7 +179,7 @@ export function ShoppingCar() {
         return response.json();
       })
       .then((datos) => {
-        HandleVaciarCarrito();
+        
         window.location.href = datos;
       });
   }
@@ -186,7 +187,6 @@ export function ShoppingCar() {
   function HandleVaciarCarrito() {
     let id = parseInt(JSON.parse(localStorage.getItem("usuario")).id);
     
-
     fetch(`https://tienda-production-852a.up.railway.app/eliminarTodo/:${id}`, {
       method: "DELETE",
       headers: {
@@ -198,7 +198,7 @@ export function ShoppingCar() {
           return "hubo un error en la consulta";
         }
         const datos = response.json();
-        setArticulos([]);
+        setArticulos([])
       })
       .catch((error) => {
         console.error(error);
