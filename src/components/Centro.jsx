@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-
+import { useNavigate } from "react-router-dom";
 import { Buton } from "./Buton";
 import { useContext } from "react";
 import { DatosCarritoContext } from "../componentesfail/DatosParaCarrito";
@@ -10,7 +10,7 @@ export function Centro() {
     []
   );
   const { setContadorArticulos } = useContext(DatosCarritoContext);
-
+const navigate = useNavigate();
   const urlProducots =
     "https://tienda-production-852a.up.railway.app/productos";
 
