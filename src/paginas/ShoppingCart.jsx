@@ -179,9 +179,9 @@ export function ShoppingCar() {
         return response.json();
       })
       .then((datos) => {
-        
-        window.location.href = datos;
-        HandleVaciarCarrito();
+         HandleVaciarCarrito();
+        window.location.replace(datos)
+       
         console.log('el pago se hizo')
       });
   }
