@@ -152,7 +152,7 @@ export function ShoppingCar() {
   }, [articulos]);
 
   function HandlePagar() {
-    HandleVaciarCarrito();
+    
     let obj = articulos.map((item) => {
       let ob = {
         nombre: item.nombre_producto,
@@ -181,6 +181,8 @@ export function ShoppingCar() {
       .then((datos) => {
         
         window.location.href = datos;
+        HandleVaciarCarrito();
+        console.log('el pago se hizo')
       });
   }
 
