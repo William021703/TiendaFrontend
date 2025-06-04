@@ -108,7 +108,7 @@ export function Loging() {
         apellido: "",
         contrasena: "",
       });
-      setAbrirCerrar(false);
+      setAbrirCerrar(true);
 
       navigate("/");
     } catch (error) {
