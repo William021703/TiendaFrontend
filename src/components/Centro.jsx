@@ -14,6 +14,14 @@ export function Centro() {
   const urlProducots =
     "https://tienda-production-852a.up.railway.app/productos";
 
+ useEffect(()=>{
+  const usuario = localStorage.getItem("usuario");
+  if (!usuario.id) {
+   navigate("/");
+  }
+ },[])
+
+
   useEffect(() => {
     fetch(urlProducots)
       .then((resultado) => {
@@ -38,6 +46,7 @@ export function Centro() {
       });
   }, []);
 
+ 
   function HandleMenos(id) {
     setProductoParaLaDescripcion((previ) =>
       previ.map((product) =>
