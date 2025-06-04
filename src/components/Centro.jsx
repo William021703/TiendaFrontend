@@ -10,13 +10,13 @@ export function Centro() {
     []
   );
   const { setContadorArticulos } = useContext(DatosCarritoContext);
-const navigate = useNavigate();
+  const navigate = useNavigate();
   const urlProducots =
     "https://tienda-production-852a.up.railway.app/productos";
 
  useEffect(()=>{
   const usuario = localStorage.getItem("usuario");
-  if (!usuario.id) {
+  if (!usuario) {
    navigate("/");
   }
  },[])
