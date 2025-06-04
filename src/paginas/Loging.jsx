@@ -110,7 +110,7 @@ export function Loging() {
         rol_id: 4,
       });
       setAbrirCerrar(true);
-      setRegistrarse(true)
+      setRegistrarse(false)
       console.log('funciono')
 
       navigate("/");
