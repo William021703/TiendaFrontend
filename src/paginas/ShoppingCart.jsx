@@ -180,7 +180,7 @@ export function ShoppingCar() {
       })
       .then((datos) => {
          HandleVaciarCarrito();
-        window.location.replace(datos)
+        console(datos)
        
         console.log('el pago se hizo')
       });
