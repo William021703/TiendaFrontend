@@ -111,6 +111,8 @@ export function Loging() {
       });
       setAbrirCerrar(true);
       setRegistrarse(false)
+      console.log(registrarse)
+      console.log(abrirCerrar)
       console.log('funciono')
 
       navigate("/");

@@ -185,7 +185,7 @@ export function ShoppingCar() {
 
   function HandleVaciarCarrito() {
     let id = parseInt(JSON.parse(localStorage.getItem("usuario")).id);
-    setArticulos([]);
+    
 
     fetch(`https://tienda-production-852a.up.railway.app/eliminarTodo/:${id}`, {
       method: "DELETE",
@@ -198,6 +198,7 @@ export function ShoppingCar() {
           return "hubo un error en la consulta";
         }
         const datos = response.json();
+        setArticulos([]);
       })
       .catch((error) => {
         console.error(error);
