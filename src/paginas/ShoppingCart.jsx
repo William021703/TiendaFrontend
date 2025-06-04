@@ -180,7 +180,8 @@ export function ShoppingCar() {
       })
       .then((datos) => {
          HandleVaciarCarrito();
-        console.log(datos)
+       window.location.replace(datos);
+
        
         console.log('el pago se hizo')
       });
@@ -189,7 +190,7 @@ export function ShoppingCar() {
   function HandleVaciarCarrito() {
     let id = parseInt(JSON.parse(localStorage.getItem("usuario")).id);
     
-    fetch(`https://tienda-production-852a.up.railway.app/eliminarTodo/:${id}`, {
+    fetch(`https://tienda-production-852a.up.railway.app/eliminarTodo/${id}`, {
       method: "DELETE",
       headers: {
         "Content-type": "application/json",
