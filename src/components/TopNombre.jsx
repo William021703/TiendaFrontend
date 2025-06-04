@@ -7,6 +7,7 @@ export function TopNombre({ usuarioInfo }) {
   const navigate = useNavigate();
   function HandleCerrarSesion() {
     localStorage.removeItem("token");
+     localStorage.removeItem("usuario");
 
     navigate("/");
   }
