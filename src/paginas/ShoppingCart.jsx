@@ -180,7 +180,7 @@ export function ShoppingCar() {
       })
       .then((datos) => {
          HandleVaciarCarrito();
-        console(datos)
+        console.log(datos)
        
         console.log('el pago se hizo')
       });
