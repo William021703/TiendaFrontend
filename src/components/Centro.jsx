@@ -14,7 +14,7 @@ export function Centro() {
   const urlProducots =
     "https://tienda-production-852a.up.railway.app/productos";
 
-<<<<<<< HEAD
+
  useEffect(()=>{
   const usuario = JSON.parse(localStorage.getItem("usuario"));
   if (usuario ) {
@@ -23,20 +23,7 @@ export function Centro() {
     navigate('/')
   }
  },[])
-=======
-  useEffect(() => {
-    try {
-      const item = localStorage.getItem("usuario");
-      const usuarioGuardado = item ? JSON.parse(item) : null;
->>>>>>> 8659f144ce2dd785ddb0698ffde22350e6437cac
 
-      if (usuarioGuardado && typeof usuarioGuardado.id === "number") {
-        navigate("/");
-      }
-    } catch (error) {
-      console.error("Error al leer usuario desde localStorage:", error);
-    }
-  }, []);
 
   useEffect(() => {
     fetch(urlProducots)
