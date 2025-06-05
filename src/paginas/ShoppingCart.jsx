@@ -13,21 +13,26 @@ export function ShoppingCar() {
 
   const navigate = useNavigate();
 useEffect(() => {
-  const usuario = JSON.parse(localStorage.getItem("usuario"));
-  if (usuario && usuario.id) {
-    const id = usuario.id;
-    fetch(`https://tienda-production-852a.up.railway.app/carrito/${id}`)
-      .then((result) => result.json())
-      .then((data) => {
-        setArticulos(data);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
+  const usuarioJSON = localStorage.getItem("usuario");
+  if (usuarioJSON) {
+    const usuario = JSON.parse(usuarioJSON);
+    if (usuario && usuario.id) {
+      fetch(`https://tienda-production-852a.up.railway.app/carrito/${usuario.id}`)
+        .then((result) => result.json())
+        .then((data) => {
+          setArticulos(data);
+        })
+        .catch((error) => {
+          console.error("Error al obtener el carrito:", error);
+        });
+    } else {
+      console.error("ID de usuario no disponible.");
+    }
   } else {
-    console.error("Usuario no encontrado o ID no disponible.");
+    console.error("No se encontró el usuario en localStorage.");
   }
 }, []);
+
 
   function HandleAumentarCantidad(objeto) {
     let obj = {
