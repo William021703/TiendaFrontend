@@ -20,12 +20,9 @@ export function Loging() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const usuarioGuardado = localStorage.getItem("usuario");
-    if (usuarioGuardado) {
-      const user = JSON.parse(usuarioGuardado);
-      if (user?.id) {
-        navigate("/productos");
-      }
+    const usuarioGuardado = JSON.parse(localStorage.getItem("usuario"));
+    if (usuarioGuardado.id) {
+      navigate("/");
     }
   }, []);
 
@@ -110,10 +107,10 @@ export function Loging() {
         rol_id: 4,
       });
       setAbrirCerrar(true);
-      setRegistrarse(false)
-      console.log(registrarse)
-      console.log(abrirCerrar)
-      console.log('funciono')
+      setRegistrarse(false);
+      console.log(registrarse);
+      console.log(abrirCerrar);
+      console.log("funciono");
 
       navigate("/");
     } catch (error) {
