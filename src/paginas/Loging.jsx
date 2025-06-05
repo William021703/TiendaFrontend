@@ -19,16 +19,16 @@ export function Loging() {
 
   const navigate = useNavigate();
 
-<<<<<<< HEAD
+//verifcar usuario
    useEffect(()=>{
   const usuario = JSON.parse(localStorage.getItem("usuario"));
   if (usuario ) {
    navigate("/productos");
   } 
  },[])
-=======
+
   
->>>>>>> 8659f144ce2dd785ddb0698ffde22350e6437cac
+
 
   function HandleLoggin(e) {
     const { name, value } = e.target;
