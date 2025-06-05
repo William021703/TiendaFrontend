@@ -23,7 +23,7 @@ export function Loging() {
  
 useEffect(() => {
   const usuario = JSON.parse(localStorage.getItem('usuario'));
-  if (usuario?.id) {
+  if (usuario) {
     navigate('/productos');
   } else {
     navigate('/');

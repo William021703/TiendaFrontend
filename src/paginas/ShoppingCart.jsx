@@ -14,9 +14,8 @@ export function ShoppingCar() {
   const navigate = useNavigate();
   useEffect(() => {
     let usuario = parseInt(JSON.parse(localStorage.getItem("usuario")));
-
-
-  const id = usuario?.id
+    if (usuario) {
+       const id = usuario?.id
   if(id) { 
     fetch(`https://tienda-production-852a.up.railway.app/carrito/${id}`)
       .then((result) => {
@@ -29,6 +28,10 @@ export function ShoppingCar() {
         console.error(error);
       });
 }
+    }
+
+
+ 
   }, []);
 
   function HandleAumentarCantidad(objeto) {
@@ -194,9 +197,10 @@ export function ShoppingCar() {
   }
 
   function HandleVaciarCarrito() {
-    let id = parseInt(JSON.parse(localStorage.getItem("usuario")).id);
-    
-    fetch(`https://tienda-production-852a.up.railway.app/eliminarTodo/${id}`, {
+    let usuario = parseInt(JSON.parse(localStorage.getItem("usuario")));
+    if (usuario) {
+      const id = usuario?.id
+       fetch(`https://tienda-production-852a.up.railway.app/eliminarTodo/${id}`, {
       method: "DELETE",
       headers: {
         "Content-type": "application/json",
@@ -212,6 +216,9 @@ export function ShoppingCar() {
       .catch((error) => {
         console.error(error);
       });
+    }
+    
+   
   }
 
   return (
