@@ -19,33 +19,34 @@ export function Contenido() {
 
   const navigate = useNavigate();
 
-  useEffect(() => {
-    const token = localStorage.getItem("token");
-    if (!token) {
-      navigate("/");
-    }
-  }, []);
+ useEffect(() => {
+  const token = localStorage.getItem("token");
+  if (!token) {
+    navigate("/login");
+    return;
+  }
 
-  useEffect(() => {
-    const conseguirInformacionUsuario = JSON.parse(
-      localStorage.getItem("usuario")
-    );
+  let conseguirInformacionUsuario;
+  try {
+    conseguirInformacionUsuario = JSON.parse(localStorage.getItem("usuario"));
+  } catch (error) {
+    console.error("Error al parsear el usuario:", error);
+    return;
+  }
 
-    const id = parseInt(conseguirInformacionUsuario.id);
-    const rol = parseInt(conseguirInformacionUsuario.rol_id);
-    setPermisos(rol);
-
-    fetch(` https://tienda-production-852a.up.railway.app/usuario/${id}`)
-      .then((resultado) => {
-        return resultado.json();
-      })
+  if (conseguirInformacionUsuario && conseguirInformacionUsuario.hasOwnProperty('id')) {
+    const id = conseguirInformacionUsuario.id;
+    fetch(`https://tienda-production-852a.up.railway.app/usuario/${id}`)
+      .then((resultado) => resultado.json())
       .then((datos) => {
         setConseguirUsuarioId(datos);
       })
       .catch((error) => {
         console.error(error);
       });
-  }, []);
+  }
+}, []);
+
 
   function HandleAbrirCerrar() {
     setAbrirCerrar(true);
