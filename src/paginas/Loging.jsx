@@ -20,9 +20,15 @@ export function Loging() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const usuarioGuardado = JSON.parse(localStorage.getItem("usuario"));
-    if (usuarioGuardado.id) {
-      navigate("/");
+    try {
+      const item = localStorage.getItem("usuario");
+      const usuarioGuardado = item ? JSON.parse(item) : null;
+
+      if (usuarioGuardado && typeof usuarioGuardado.id === "number") {
+        navigate("/productos");
+      }
+    } catch (error) {
+      console.error("Error al leer usuario desde localStorage:", error);
     }
   }, []);
 

@@ -14,13 +14,18 @@ export function Centro() {
   const urlProducots =
     "https://tienda-production-852a.up.railway.app/productos";
 
- useEffect(()=>{
-  const usuario = localStorage.getItem("usuario");
-  if (!usuario) {
-   navigate("/");
-  }
- },[])
+  useEffect(() => {
+    try {
+      const item = localStorage.getItem("usuario");
+      const usuarioGuardado = item ? JSON.parse(item) : null;
 
+      if (usuarioGuardado && typeof usuarioGuardado.id === "number") {
+        navigate("/");
+      }
+    } catch (error) {
+      console.error("Error al leer usuario desde localStorage:", error);
+    }
+  }, []);
 
   useEffect(() => {
     fetch(urlProducots)
@@ -46,7 +51,6 @@ export function Centro() {
       });
   }, []);
 
- 
   function HandleMenos(id) {
     setProductoParaLaDescripcion((previ) =>
       previ.map((product) =>
