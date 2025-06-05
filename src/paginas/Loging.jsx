@@ -19,15 +19,12 @@ export function Loging() {
 
   const navigate = useNavigate();
 
-  useEffect(() => {
-    const usuarioGuardado = localStorage.getItem("usuario");
-    if (usuarioGuardado) {
-      const user = JSON.parse(usuarioGuardado);
-      if (user?.id) {
-        navigate("/productos");
-      }
-    }
-  }, []);
+   useEffect(()=>{
+  const usuario = JSON.parse(localStorage.getItem("usuario"));
+  if (usuario ) {
+   navigate("/productos");
+  } 
+ },[])
 
   function HandleLoggin(e) {
     const { name, value } = e.target;

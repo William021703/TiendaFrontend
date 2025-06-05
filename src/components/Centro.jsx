@@ -15,9 +15,11 @@ export function Centro() {
     "https://tienda-production-852a.up.railway.app/productos";
 
  useEffect(()=>{
-  const usuario = localStorage.getItem("usuario");
-  if (!usuario) {
-   navigate("/");
+  const usuario = JSON.parse(localStorage.getItem("usuario"));
+  if (usuario ) {
+   navigate("/productos");
+  } else{
+    navigate('/')
   }
  },[])
 
