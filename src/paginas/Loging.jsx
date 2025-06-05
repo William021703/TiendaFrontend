@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 import { useNavigate } from "react-router-dom";
 import { CrearUsuario } from "../components/CrearUsuario";
@@ -18,19 +18,6 @@ export function Loging() {
   const [registrarse, setRegistrarse] = useState(false);
 
   const navigate = useNavigate();
-
-  useEffect(() => {
-    try {
-      const item = localStorage.getItem("usuario");
-      const usuarioGuardado = item ? JSON.parse(item) : null;
-
-      if (usuarioGuardado && typeof usuarioGuardado.id === "number") {
-        navigate("/productos");
-      }
-    } catch (error) {
-      console.error("Error al leer usuario desde localStorage:", error);
-    }
-  }, []);
 
   function HandleLoggin(e) {
     const { name, value } = e.target;
@@ -110,13 +97,8 @@ export function Loging() {
         nombre: "",
         apellido: "",
         contrasena: "",
-        rol_id: 4,
       });
-      setAbrirCerrar(true);
-      setRegistrarse(false);
-      console.log(registrarse);
-      console.log(abrirCerrar);
-      console.log("funciono");
+      setAbrirCerrar(false);
 
       navigate("/");
     } catch (error) {
@@ -127,6 +109,7 @@ export function Loging() {
   return (
     <div>
       <div className="w-full h-screen bg-linear-to-r from-cyan-500 to-blue-500 relative">
+        <div className="size-96 rounded-full bg-radial-[at_25%_25%] from-white to-zinc-900 to-75% absolute left-[50%] top-30 animate-spin "></div>
         <div className="w-3 h-3 bg-white rounded-full absolute left-[69%] top-[50%] shadow-[0_0_15px_5px_white] before:content-[''] before:absolute before:w-12 before:h-[2px] before:bg-gradient-to-r before:from-white before:to-transparent before:top-1/2 before:left-full before:translate-y-[-50%] elemento-animado "></div>
         <div className="w-3 h-3 bg-white rounded-full absolute left-[30%] top-[29%] shadow-[0_0_15px_5px_white] before:content-[''] before:absolute before:w-12 before:h-[2px] before:bg-gradient-to-r before:from-white before:to-transparent before:top-1/2 before:left-full before:translate-y-[-50%] elemento-animado"></div>
         <div className="w-3 h-3 bg-white rounded-full absolute left-[90%] top-[78%] shadow-[0_0_15px_5px_white] before:content-[''] before:absolute before:w-12 before:h-[2px] before:bg-gradient-to-r before:from-white before:to-transparent before:top-1/2 before:left-full before:translate-y-[-50%] elemento-animado"></div>
@@ -150,7 +133,7 @@ export function Loging() {
           <CrearUsuario
             nuevoUsuario={nuevoUsuario}
             setNuevoUsuario={setNuevoUsuario}
-            HandleCrearUsuario={HandleCrearUsuario}
+            funcion={HandleCrearUsuario}
             setRegistrarse={setRegistrarse}
             setAbrirCerrar={setAbrirCerrar}
           />

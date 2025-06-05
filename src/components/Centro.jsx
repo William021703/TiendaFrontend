@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+
 import { Buton } from "./Buton";
 import { useContext } from "react";
 import { DatosCarritoContext } from "../componentesfail/DatosParaCarrito";
@@ -10,22 +10,9 @@ export function Centro() {
     []
   );
   const { setContadorArticulos } = useContext(DatosCarritoContext);
-  const navigate = useNavigate();
+
   const urlProducots =
     "https://tienda-production-852a.up.railway.app/productos";
-
-  useEffect(() => {
-    try {
-      const item = localStorage.getItem("usuario");
-      const usuarioGuardado = item ? JSON.parse(item) : null;
-
-      if (usuarioGuardado && typeof usuarioGuardado.id === "number") {
-        navigate("/");
-      }
-    } catch (error) {
-      console.error("Error al leer usuario desde localStorage:", error);
-    }
-  }, []);
 
   useEffect(() => {
     fetch(urlProducots)
