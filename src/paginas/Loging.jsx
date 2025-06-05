@@ -22,12 +22,12 @@ export function Loging() {
 //verifcar usuario
  
 useEffect(() => {
-  const usuario = JSON.parse(localStorage.getItem('usuario'));
-  if (usuario) {
-    navigate('/productos');
-  } else {
-    navigate('/');
-  }
+ let usuario = localStorage.getItem('token')
+ if (usuario) {
+  navigate('/productos')
+  
+ }
+ 
 }, []);
 
 

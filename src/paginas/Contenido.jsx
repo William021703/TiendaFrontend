@@ -26,16 +26,11 @@ export function Contenido() {
     return;
   }
 
-  let conseguirInformacionUsuario;
-  try {
-    conseguirInformacionUsuario = JSON.parse(localStorage.getItem("usuario"));
-  } catch (error) {
-    console.error("Error al parsear el usuario:", error);
-    return;
+  let conseguirInformacionUsuario = localStorage.getItem('usuario')
+  if (conseguirInformacionUsuario) {
+    conseguirInformacionUsuario =  JSON.parse(conseguirInformacionUsuario)
   }
-
-
-    const id = conseguirInformacionUsuario?.id;
+  const id = conseguirInformacionUsuario? conseguirInformacionUsuario.id : null
     if(id){ 
     fetch(`https://tienda-production-852a.up.railway.app/usuario/${id}`)
       .then((resultado) => resultado.json())
@@ -46,6 +41,8 @@ export function Contenido() {
         console.error(error);
       });
   }
+  
+
 }, []);
 
 

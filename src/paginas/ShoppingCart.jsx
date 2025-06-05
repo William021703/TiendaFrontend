@@ -15,7 +15,7 @@ export function ShoppingCar() {
   useEffect(() => {
     let usuario = parseInt(JSON.parse(localStorage.getItem("usuario")));
     if (usuario) {
-       const id = usuario?.id
+       const id = usuario? usuario.id : null
   if(id) { 
     fetch(`https://tienda-production-852a.up.railway.app/carrito/${id}`)
       .then((result) => {
@@ -197,10 +197,13 @@ export function ShoppingCar() {
   }
 
   function HandleVaciarCarrito() {
-    let usuario = parseInt(JSON.parse(localStorage.getItem("usuario")));
+   let usuario = localStorage.getItem('usuario')
     if (usuario) {
-      const id = usuario?.id
-       fetch(`https://tienda-production-852a.up.railway.app/eliminarTodo/${id}`, {
+      usuario = JSON.parse(usuario)
+    }
+    const id = usuario? usuario.id : null
+       if (id) {
+        fetch(`https://tienda-production-852a.up.railway.app/eliminarTodo/${id}`, {
       method: "DELETE",
       headers: {
         "Content-type": "application/json",
@@ -216,6 +219,9 @@ export function ShoppingCar() {
       .catch((error) => {
         console.error(error);
       });
+       }else{
+       navigate('/')
+       }
     }
     
    
