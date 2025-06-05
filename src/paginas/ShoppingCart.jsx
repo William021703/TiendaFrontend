@@ -12,27 +12,29 @@ export function ShoppingCar() {
   const [cantidades, setCantidades] = useState(0);
 
   const navigate = useNavigate();
-useEffect(() => {
-  const usuarioJSON = localStorage.getItem("usuario");
-  if (usuarioJSON) {
-    const usuario = JSON.parse(usuarioJSON);
-    if (usuario && usuario.id) {
-      fetch(`https://tienda-production-852a.up.railway.app/carrito/${usuario.id}`)
-        .then((result) => result.json())
-        .then((data) => {
-          setArticulos(data);
-        })
-        .catch((error) => {
-          console.error("Error al obtener el carrito:", error);
-        });
-    } else {
-      console.error("ID de usuario no disponible.");
+  useEffect(() => {
+    let usuario = parseInt(JSON.parse(localStorage.getItem("usuario")));
+    console.log(usuario)
+    if (usuario) {
+       const id = usuario? usuario.id : null
+       console.log(id)
+  if(id) { 
+    fetch(`https://tienda-production-852a.up.railway.app/carrito/${id}`)
+      .then((result) => {
+        return result.json();
+      })
+      .then((data) => {
+        setArticulos(data);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+}
     }
-  } else {
-    console.error("No se encontró el usuario en localStorage.");
-  }
-}, []);
 
+
+ 
+  }, []);
 
   function HandleAumentarCantidad(objeto) {
     let obj = {
