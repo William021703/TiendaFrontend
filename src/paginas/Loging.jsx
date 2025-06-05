@@ -19,12 +19,16 @@ export function Loging() {
 
   const navigate = useNavigate();
 
+<<<<<<< HEAD
    useEffect(()=>{
   const usuario = JSON.parse(localStorage.getItem("usuario"));
   if (usuario ) {
    navigate("/productos");
   } 
  },[])
+=======
+  
+>>>>>>> 8659f144ce2dd785ddb0698ffde22350e6437cac
 
   function HandleLoggin(e) {
     const { name, value } = e.target;
@@ -107,10 +111,10 @@ export function Loging() {
         rol_id: 4,
       });
       setAbrirCerrar(true);
-      setRegistrarse(false)
-      console.log(registrarse)
-      console.log(abrirCerrar)
-      console.log('funciono')
+      setRegistrarse(false);
+      console.log(registrarse);
+      console.log(abrirCerrar);
+      console.log("funciono");
 
       navigate("/");
     } catch (error) {
