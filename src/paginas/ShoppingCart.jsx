@@ -15,9 +15,9 @@ export function ShoppingCar() {
   useEffect(() => {
     let usuario = parseInt(JSON.parse(localStorage.getItem("usuario")));
 
-if (usuario && usuariohasOwnProperty('id')) {
-  const id = usuario.id
-  
+
+  const id = usuario?.id
+  if(id) { 
     fetch(`https://tienda-production-852a.up.railway.app/carrito/${id}`)
       .then((result) => {
         return result.json();

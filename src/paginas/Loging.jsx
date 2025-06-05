@@ -20,12 +20,16 @@ export function Loging() {
   const navigate = useNavigate();
 
 //verifcar usuario
-   useEffect(()=>{
-  const usuario = JSON.parse(localStorage.getItem("usuario"));
-  if (usuario ) {
-   navigate("/productos");
-  } 
- },[])
+ 
+useEffect(() => {
+  const usuario = JSON.parse(localStorage.getItem('usuario'));
+  if (usuario?.id) {
+    navigate('/productos');
+  } else {
+    navigate('/');
+  }
+}, []);
+
 
   
 

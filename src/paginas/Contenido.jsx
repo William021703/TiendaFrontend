@@ -34,8 +34,9 @@ export function Contenido() {
     return;
   }
 
-  if (conseguirInformacionUsuario && conseguirInformacionUsuario.hasOwnProperty('id')) {
-    const id = conseguirInformacionUsuario.id;
+
+    const id = conseguirInformacionUsuario?.id;
+    if(id){ 
     fetch(`https://tienda-production-852a.up.railway.app/usuario/${id}`)
       .then((resultado) => resultado.json())
       .then((datos) => {
