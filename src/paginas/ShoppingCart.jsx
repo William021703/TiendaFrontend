@@ -12,27 +12,22 @@ export function ShoppingCar() {
   const [cantidades, setCantidades] = useState(0);
 
   const navigate = useNavigate();
-  useEffect(() => {
-    let usuario = parseInt(JSON.parse(localStorage.getItem("usuario")));
-    if (usuario) {
-       const id = usuario? usuario.id : null
-  if(id) { 
+useEffect(() => {
+  const usuario = JSON.parse(localStorage.getItem("usuario"));
+  if (usuario && usuario.id) {
+    const id = usuario.id;
     fetch(`https://tienda-production-852a.up.railway.app/carrito/${id}`)
-      .then((result) => {
-        return result.json();
-      })
+      .then((result) => result.json())
       .then((data) => {
         setArticulos(data);
       })
       .catch((error) => {
         console.error(error);
       });
-}
-    }
-
-
- 
-  }, []);
+  } else {
+    console.error("Usuario no encontrado o ID no disponible.");
+  }
+}, []);
 
   function HandleAumentarCantidad(objeto) {
     let obj = {
