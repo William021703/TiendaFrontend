@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { useNavigate } from "react-router-dom";
 import { CrearUsuario } from "../components/CrearUsuario";
@@ -18,6 +18,13 @@ export function Loging() {
   const [registrarse, setRegistrarse] = useState(false);
 
   const navigate = useNavigate();
+
+  useEffect(()=>{
+    const token = localStorage.getItem('token')
+    if (token) {
+      navigate('/productos')
+    }
+  },[])
 
   function HandleLoggin(e) {
     const { name, value } = e.target;
