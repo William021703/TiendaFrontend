@@ -19,33 +19,32 @@ export function Contenido() {
 
   const navigate = useNavigate();
 
-  useEffect(() => {
-    const token = localStorage.getItem("token");
-    if (!token) {
-      navigate("/");
-    }
-  }, []);
+ useEffect(() => {
+  const token = localStorage.getItem("token");
+  if (!token) {
+    navigate("/login");
+    return;
+  }
 
-  useEffect(() => {
-    const conseguirInformacionUsuario = JSON.parse(
-      localStorage.getItem("usuario")
-    );
-
-    const id = parseInt(conseguirInformacionUsuario.id);
-    const rol = parseInt(conseguirInformacionUsuario.rol_id);
-    setPermisos(rol);
-
-    fetch(` https://tienda-production-852a.up.railway.app/usuario/${id}`)
-      .then((resultado) => {
-        return resultado.json();
-      })
+  let conseguirInformacionUsuario = localStorage.getItem('usuario')
+  if (conseguirInformacionUsuario) {
+    conseguirInformacionUsuario =  JSON.parse(conseguirInformacionUsuario)
+  }
+  const id = conseguirInformacionUsuario? conseguirInformacionUsuario.id : null
+    if(id){ 
+    fetch(`https://tienda-production-852a.up.railway.app/usuario/${id}`)
+      .then((resultado) => resultado.json())
       .then((datos) => {
         setConseguirUsuarioId(datos);
       })
       .catch((error) => {
         console.error(error);
       });
-  }, []);
+  }
+  
+
+}, []);
+
 
   function HandleAbrirCerrar() {
     setAbrirCerrar(true);

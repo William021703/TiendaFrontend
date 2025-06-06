@@ -13,7 +13,8 @@ export function ShoppingCar() {
 
   const navigate = useNavigate();
   useEffect(() => {
-    let id = parseInt(JSON.parse(localStorage.getItem("usuario")).id);
+    let id = parseInt(JSON.parse(localStorage.getItem("usuario").id));
+
     fetch(`https://tienda-production-852a.up.railway.app/carrito/${id}`)
       .then((result) => {
         return result.json();
@@ -25,6 +26,7 @@ export function ShoppingCar() {
         console.error(error);
       });
   }, []);
+
   function HandleAumentarCantidad(objeto) {
     let obj = {
       usuario_id: objeto.usuario_id,
@@ -188,22 +190,29 @@ export function ShoppingCar() {
   function HandleVaciarCarrito() {
     let id = parseInt(JSON.parse(localStorage.getItem("usuario")).id);
 
-    fetch(`https://tienda-production-852a.up.railway.app/eliminarTodo/${id}`, {
-      method: "DELETE",
-      headers: {
-        "Content-type": "application/json",
-      },
-    })
-      .then((response) => {
-        if (!response.ok) {
-          return "hubo un error en la consulta";
+    if (id) {
+      fetch(
+        `https://tienda-production-852a.up.railway.app/eliminarTodo/${id}`,
+        {
+          method: "DELETE",
+          headers: {
+            "Content-type": "application/json",
+          },
         }
-        const datos = response.json();
-        setArticulos([]);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
+      )
+        .then((response) => {
+          if (!response.ok) {
+            return "hubo un error en la consulta";
+          }
+          const datos = response.json();
+          setArticulos([]);
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+    } else {
+      navigate("/");
+    }
   }
 
   return (
