@@ -13,7 +13,8 @@ export function ShoppingCar() {
 
   const navigate = useNavigate();
   useEffect(() => {
-    let id = parseInt(JSON.parse(localStorage.getItem("usuario").id));
+    let usuario = JSON.parse(localStorage.getItem("usuario"));
+    let id = usuario?.id;
 
     fetch(`https://tienda-production-852a.up.railway.app/carrito/${id}`)
       .then((result) => {
