@@ -18,11 +18,7 @@ export function Centro() {
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (!token) {
-      navigate("/");
-      setValidarUsuario(true);
-      console.log("este es el true");
-    } else {
-      console.log(" este es el ELSE componente de loggin");
+      window.open("https://teal-pony-fe4b61.netlify.app/");
     }
   }, [navigate]);
 
@@ -144,78 +140,66 @@ export function Centro() {
 
   return (
     <div>
-      {validarUsuario ? (
-        <div>
-          <h1>hola mundo</h1>
-        </div>
-      ) : (
-        <>
-          <div
-            style={{
-              display: "flex",
-              background: "gray",
-              height: "100px",
-              top: "29px",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
-            <input
-              style={{
-                display: "flex",
-                width: "600px",
-                height: "50px",
-                fontFamily: "-moz-initial",
-                fontSize: "30px",
-                borderRadius: "10px",
-                padding: "10px",
-              }}
-              type="text"
-            />
-          </div>
-          <div>
-            <ul className="contenedor-centro">
-              {productoParaLaDescripcion.map((product) => (
-                <li className="contenedor-producto" key={product.producto_id}>
-                  <img
-                    src={product.img}
-                    alt={product.nombre_producto}
-                    style={{
-                      width: "200px",
-                      height: "200px",
-                      objectFit: "cover",
-                    }}
+      <div
+        style={{
+          display: "flex",
+          background: "gray",
+          height: "100px",
+          top: "29px",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <input
+          style={{
+            display: "flex",
+            width: "600px",
+            height: "50px",
+            fontFamily: "-moz-initial",
+            fontSize: "30px",
+            borderRadius: "10px",
+            padding: "10px",
+          }}
+          type="text"
+        />
+      </div>
+      <div>
+        <ul className="">
+          {productoParaLaDescripcion.map((product) => (
+            <li className="" key={product.producto_id}>
+              <img
+                src={product.img}
+                alt={product.nombre_producto}
+                className=""
+              />
+              <h1>{product.nombre_producto} </h1>
+              <h1></h1>
+              <h1>Precio: {product.precio}$ </h1>
+              <div>
+                <div className="">
+                  <Buton
+                    clase="menos"
+                    funcion={() => HandleMenos(product.producto_id)}
+                    name="-"
                   />
-                  <h1>{product.nombre_producto} </h1>
-                  <h1></h1>
-                  <h1>Precio: {product.precio}$ </h1>
-                  <div>
-                    <div className="button">
-                      <Buton
-                        clase="menos"
-                        funcion={() => HandleMenos(product.producto_id)}
-                        name="-"
-                      />
-                      <Buton
-                        clase="mas"
-                        funcion={() => HandleMas(product.producto_id)}
-                        name="+"
-                      />
-                    </div>
-                    <Buton
-                      clase="agregar"
-                      funcion={() => {
-                        HandleAgregar(product);
-                      }}
-                      name="Agregar"
-                    />
-                  </div>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </>
-      )}
+                  <Buton
+                    clase="mas"
+                    funcion={() => HandleMas(product.producto_id)}
+                    name="+"
+                  />
+                </div>
+                <Buton
+                  clase="agregar"
+                  funcion={() => {
+                    HandleAgregar(product);
+                  }}
+                  name="Agregar"
+                />
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 }
