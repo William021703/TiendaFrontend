@@ -141,28 +141,9 @@ export function Centro() {
   return (
     <div>
       <div
-        style={{
-          display: "flex",
-          background: "gray",
-          height: "100px",
-          top: "29px",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
-        <input
-          style={{
-            display: "flex",
-            width: "600px",
-            height: "50px",
-            fontFamily: "-moz-initial",
-            fontSize: "30px",
-            borderRadius: "10px",
-            padding: "10px",
-          }}
-          type="text"
-        />
-      </div>
+        className="bg-linear-to-r from-cyan-500 to-blue-500
+       w-full h-screen grid grid-cols-4 gap-4 "
+      ></div>
       <div>
         <ul className="">
           {productoParaLaDescripcion.map((product) => (
