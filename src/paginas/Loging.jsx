@@ -116,7 +116,6 @@ export function Loging() {
   return (
     <div>
       <div className="w-full h-screen bg-linear-to-r from-cyan-500 to-blue-500 relative">
-        <div className="size-96 rounded-full bg-radial-[at_25%_25%] from-white to-zinc-900 to-75% absolute left-[50%] top-30 animate-spin "></div>
         <div className="w-3 h-3 bg-white rounded-full absolute left-[69%] top-[50%] shadow-[0_0_15px_5px_white] before:content-[''] before:absolute before:w-12 before:h-[2px] before:bg-gradient-to-r before:from-white before:to-transparent before:top-1/2 before:left-full before:translate-y-[-50%] elemento-animado "></div>
         <div className="w-3 h-3 bg-white rounded-full absolute left-[30%] top-[29%] shadow-[0_0_15px_5px_white] before:content-[''] before:absolute before:w-12 before:h-[2px] before:bg-gradient-to-r before:from-white before:to-transparent before:top-1/2 before:left-full before:translate-y-[-50%] elemento-animado"></div>
         <div className="w-3 h-3 bg-white rounded-full absolute left-[90%] top-[78%] shadow-[0_0_15px_5px_white] before:content-[''] before:absolute before:w-12 before:h-[2px] before:bg-gradient-to-r before:from-white before:to-transparent before:top-1/2 before:left-full before:translate-y-[-50%] elemento-animado"></div>
