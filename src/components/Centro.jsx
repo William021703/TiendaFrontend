@@ -3,16 +3,23 @@ import { useEffect, useState } from "react";
 import { Buton } from "./Buton";
 import { useContext } from "react";
 import { DatosCarritoContext } from "../componentesfail/DatosParaCarrito";
-
+import { useNavigate } from "react-router-dom";
 export function Centro() {
   const [producto, setProducto] = useState([]);
   const [productoParaLaDescripcion, setProductoParaLaDescripcion] = useState(
     []
   );
   const { setContadorArticulos } = useContext(DatosCarritoContext);
-
+  const navigate = useNavigate();
   const urlProducots =
     "https://tienda-production-852a.up.railway.app/productos";
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (!token) {
+      navigate("/");
+    }
+  }, [navigate]);
 
   useEffect(() => {
     fetch(urlProducots)

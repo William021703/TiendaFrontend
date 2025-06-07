@@ -12,21 +12,37 @@ export function ShoppingCar() {
   const [cantidades, setCantidades] = useState(0);
 
   const navigate = useNavigate();
-  useEffect(() => {
-    let usuario = JSON.parse(localStorage.getItem("usuario"));
-    let id = usuario?.id;
 
-    fetch(`https://tienda-production-852a.up.railway.app/carrito/${id}`)
-      .then((result) => {
-        return result.json();
-      })
-      .then((data) => {
-        setArticulos(data);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  }, []);
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (!token) {
+      navigate("/");
+    }
+  }, [navigate]);
+
+  useEffect(() => {
+    let usuario = localStorage.getItem("usuario");
+    try {
+      if (usuario) {
+        usuario = JSON.parse(usuario);
+        let id = usuario ? usuario.id : null;
+        if (id) {
+          fetch(`https://tienda-production-852a.up.railway.app/carrito/${id}`)
+            .then((result) => {
+              return result.json();
+            })
+            .then((data) => {
+              setArticulos(data);
+            })
+            .catch((error) => {
+              console.error(error);
+            });
+        }
+      }
+    } catch (error) {
+      navigate("/");
+    }
+  }, [navigate]);
 
   function HandleAumentarCantidad(objeto) {
     let obj = {

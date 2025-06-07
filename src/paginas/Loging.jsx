@@ -19,12 +19,12 @@ export function Loging() {
 
   const navigate = useNavigate();
 
-  useEffect(()=>{
-    const token = localStorage.getItem('token')
+  useEffect(() => {
+    const token = localStorage.getItem("token");
     if (token) {
-      navigate('/productos')
+      navigate("/productos");
     }
-  },[])
+  }, [navigate]);
 
   function HandleLoggin(e) {
     const { name, value } = e.target;
