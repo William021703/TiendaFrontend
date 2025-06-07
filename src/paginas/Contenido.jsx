@@ -19,32 +19,33 @@ export function Contenido() {
 
   const navigate = useNavigate();
 
- useEffect(() => {
-  const token = localStorage.getItem("token");
-  if (!token) {
-    navigate("/login");
-    return;
-  }
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (!token) {
+      navigate("/login");
+      return;
+    }
 
-  let conseguirInformacionUsuario = localStorage.getItem('usuario')
-  if (conseguirInformacionUsuario) {
-    conseguirInformacionUsuario =  JSON.parse(conseguirInformacionUsuario)
-  }
-  const id = conseguirInformacionUsuario? conseguirInformacionUsuario.id : null
-    if(id){ 
-    fetch(`https://tienda-production-852a.up.railway.app/usuario/${id}`)
-      .then((resultado) => resultado.json())
-      .then((datos) => {
-        setConseguirUsuarioId(datos);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  }
-  
+    try {
+      const usuarioRaw = localStorage.getItem("usuario");
+      const usuario = usuarioRaw ? JSON.parse(usuarioRaw) : null;
+      const id = usuario?.id;
 
-}, []);
-
+      if (id) {
+        fetch(`https://tienda-production-852a.up.railway.app/usuario/${id}`)
+          .then((resultado) => resultado.json())
+          .then((datos) => {
+            setConseguirUsuarioId(datos);
+          })
+          .catch((error) => {
+            console.error(error);
+          });
+      }
+    } catch (error) {
+      console.error("Error al parsear usuario:", error);
+      navigate("/login");
+    }
+  }, []);
 
   function HandleAbrirCerrar() {
     setAbrirCerrar(true);
