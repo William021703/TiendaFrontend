@@ -9,7 +9,7 @@ export function Centro() {
   const [productoParaLaDescripcion, setProductoParaLaDescripcion] = useState(
     []
   );
-  const [validarUsuario, setValidarUsuario] = useState(false);
+
   const { setContadorArticulos } = useContext(DatosCarritoContext);
   const navigate = useNavigate();
   const urlProducots =
