@@ -139,12 +139,12 @@ export function Centro() {
   }
 
   return (
-    <div
-      className="bg-linear-to-r from-cyan-500 to-blue-500
-       w-full h-screen grid grid-cols-4 gap-4 "
-    >
+    <div>
       <div>
-        <ul className="">
+        <ul
+          className="bg-linear-to-r from-cyan-500 to-blue-500
+       w-full h-screen grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
+        >
           {productoParaLaDescripcion.map((product) => (
             <li className="" key={product.producto_id}>
               <img
