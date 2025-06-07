@@ -9,6 +9,7 @@ export function Centro() {
   const [productoParaLaDescripcion, setProductoParaLaDescripcion] = useState(
     []
   );
+  const [validarUsuario, setValidarUsuario] = useState(false);
   const { setContadorArticulos } = useContext(DatosCarritoContext);
   const navigate = useNavigate();
   const urlProducots =
@@ -18,7 +19,8 @@ export function Centro() {
     const token = localStorage.getItem("token");
     if (!token) {
       navigate("/");
-      console.log(" este es el true componente de loggin");
+      setValidarUsuario(true);
+      console.log("este es el true");
     } else {
       console.log(" este es el ELSE componente de loggin");
     }
@@ -142,66 +144,78 @@ export function Centro() {
 
   return (
     <div>
-      <div
-        style={{
-          display: "flex",
-          background: "gray",
-          height: "100px",
-          top: "29px",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
-        <input
-          style={{
-            display: "flex",
-            width: "600px",
-            height: "50px",
-            fontFamily: "-moz-initial",
-            fontSize: "30px",
-            borderRadius: "10px",
-            padding: "10px",
-          }}
-          type="text"
-        />
-      </div>
-      <div>
-        <ul className="contenedor-centro">
-          {productoParaLaDescripcion.map((product) => (
-            <li className="contenedor-producto" key={product.producto_id}>
-              <img
-                src={product.img}
-                alt={product.nombre_producto}
-                style={{ width: "200px", height: "200px", objectFit: "cover" }}
-              />
-              <h1>{product.nombre_producto} </h1>
-              <h1></h1>
-              <h1>Precio: {product.precio}$ </h1>
-              <div>
-                <div className="button">
-                  <Buton
-                    clase="menos"
-                    funcion={() => HandleMenos(product.producto_id)}
-                    name="-"
+      {validarUsuario ? (
+        <div>
+          <h1>hola mundo</h1>
+        </div>
+      ) : (
+        <>
+          <div
+            style={{
+              display: "flex",
+              background: "gray",
+              height: "100px",
+              top: "29px",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <input
+              style={{
+                display: "flex",
+                width: "600px",
+                height: "50px",
+                fontFamily: "-moz-initial",
+                fontSize: "30px",
+                borderRadius: "10px",
+                padding: "10px",
+              }}
+              type="text"
+            />
+          </div>
+          <div>
+            <ul className="contenedor-centro">
+              {productoParaLaDescripcion.map((product) => (
+                <li className="contenedor-producto" key={product.producto_id}>
+                  <img
+                    src={product.img}
+                    alt={product.nombre_producto}
+                    style={{
+                      width: "200px",
+                      height: "200px",
+                      objectFit: "cover",
+                    }}
                   />
-                  <Buton
-                    clase="mas"
-                    funcion={() => HandleMas(product.producto_id)}
-                    name="+"
-                  />
-                </div>
-                <Buton
-                  clase="agregar"
-                  funcion={() => {
-                    HandleAgregar(product);
-                  }}
-                  name="Agregar"
-                />
-              </div>
-            </li>
-          ))}
-        </ul>
-      </div>
+                  <h1>{product.nombre_producto} </h1>
+                  <h1></h1>
+                  <h1>Precio: {product.precio}$ </h1>
+                  <div>
+                    <div className="button">
+                      <Buton
+                        clase="menos"
+                        funcion={() => HandleMenos(product.producto_id)}
+                        name="-"
+                      />
+                      <Buton
+                        clase="mas"
+                        funcion={() => HandleMas(product.producto_id)}
+                        name="+"
+                      />
+                    </div>
+                    <Buton
+                      clase="agregar"
+                      funcion={() => {
+                        HandleAgregar(product);
+                      }}
+                      name="Agregar"
+                    />
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </>
+      )}
     </div>
   );
 }
