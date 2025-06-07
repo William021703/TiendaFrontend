@@ -69,10 +69,19 @@ export function Centro() {
     "https://tienda-production-852a.up.railway.app/actualizarCarrito";
 
   function HandleAgregar(articulo) {
-    const conseguirInformacionUsuario = JSON.parse(
-      localStorage.getItem("usuario")
-    );
-    const id = parseInt(conseguirInformacionUsuario.id);
+    const usuarioRaw = localStorage.getItem("usuario");
+    const conseguirInformacionUsuario = usuarioRaw
+      ? JSON.parse(usuarioRaw)
+      : null;
+    const id = conseguirInformacionUsuario
+      ? parseInt(conseguirInformacionUsuario.id)
+      : null;
+
+    if (!id) {
+      navigate("/");
+      return;
+    }
+
     let obj = {
       usuario_id: id,
       producto_id: articulo.producto_id,
