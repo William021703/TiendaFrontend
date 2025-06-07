@@ -24,10 +24,12 @@ export function ShoppingCar() {
     let usuario = localStorage.getItem("usuario");
     try {
       if (usuario) {
-        usuario = JSON.parse(usuario);
-        let id = usuario ? usuario.id : null;
-        if (id) {
-          fetch(`https://tienda-production-852a.up.railway.app/carrito/${id}`)
+        const usuarioId = JSON.parse(usuario);
+
+        if (usuarioId && usuarioId.id) {
+          fetch(
+            `https://tienda-production-852a.up.railway.app/carrito/${usuarioId.id}`
+          )
             .then((result) => {
               return result.json();
             })
