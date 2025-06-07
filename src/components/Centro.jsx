@@ -18,6 +18,9 @@ export function Centro() {
     const token = localStorage.getItem("token");
     if (!token) {
       navigate("/");
+      console.log(" este es el true componente de loggin");
+    } else {
+      console.log(" este es el ELSE componente de loggin");
     }
   }, [navigate]);
 
