@@ -142,12 +142,14 @@ export function Centro() {
     <div>
       <div>
         <ul
-          className="bg-gradient-to-r from-cyan-500 to-blue-500
+          className="bg-radial-[at_25%_25%] from-white to-zinc-900 to-75%
        w-full min-h-screen p-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
         >
           {productoParaLaDescripcion.map((product) => (
             <li
-              className="bg-white w-full max-w-sm md:max-w-md lg:max-w-lg flex flex-col rounded-2xl shadow-md overflow-hidden transition-transform hover:scale-[1.01] duration-200"
+              className="bg-white w-full max-w-sm md:max-w-md lg:max-w-lg flex flex-col
+               rounded-2xl shadow-lg overflow-hidden transition-transform 
+              hover:shadow-xl hover:scale-[1.01] duration-200"
               key={product.producto_id}
             >
               <div className="h-64 md:h-72 lg:h-80 overflow-hidden">
@@ -171,18 +173,21 @@ export function Centro() {
                 <div className="flex items-center justify-between gap-2 mt-auto">
                   <div className="flex gap-2">
                     <Buton
-                      clase=" bg-gray-200 px-3 py-1 rounded hover:bg-gray-300"
+                      clase=" bg-gray-200 px-3 py-1 rounded hover:bg-gray-300 cursor-pointer
+"
                       funcion={() => HandleMenos(product.producto_id)}
                       name="-"
                     />
                     <Buton
-                      clase=" bg-gray-200 px-3 py-1 rounded hover:bg-gray-300"
+                      clase=" bg-gray-200 px-3 py-1 rounded hover:bg-gray-300 cursor-pointer
+"
                       funcion={() => HandleMas(product.producto_id)}
                       name="+"
                     />
                   </div>
                   <Buton
-                    clase=" bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700"
+                    clase=" bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 pointer cursor-pointer
+"
                     funcion={() => {
                       HandleAgregar(product);
                     }}
