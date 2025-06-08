@@ -147,13 +147,14 @@ export function Centro() {
         >
           {productoParaLaDescripcion.map((product) => (
             <li
-              className="bg-slate-50 w-full max-w-sm md:max-w-md lg:max-w-lg border-2 "
+              className="bg-slate-50 w-full max-w-sm md:max-w-md lg:max-w-lg 
+              flex flex-col border-2 rounded-2xl "
               key={product.producto_id}
             >
               <img
                 src={product.img}
                 alt={product.nombre_producto}
-                className="object-cover md:h-64 lg:h-80"
+                className="object-cover md:h-64 lg:h-80 rounded-2xl"
               />
               <h1>{product.nombre_producto} </h1>
               <h1></h1>
