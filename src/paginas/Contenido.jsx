@@ -97,7 +97,7 @@ export function Contenido() {
 
   return (
     <div className="w-full min-h-full">
-      <div className="bg-amber-50 w-full h-14 flex items-center justify-between px-4">
+      <div className="bg-amber-50 w-full h-14 flex items-center justify-between px-4 fixed">
         <h1 className="text-lg font-bold">Ropa deportiva</h1>
         <Carrito />
       </div>
@@ -107,7 +107,7 @@ export function Contenido() {
       <div>
         <TopNombre usuarioInfo={conseguirUsuarioId} />
         {permisos != 4 && (
-          <div className="">
+          <div className=" fixed">
             {abrirCerrar ? (
               <AgregarProducto
                 nuevoProducto={nuevoProducto}
