@@ -142,8 +142,8 @@ export function Centro() {
     <div>
       <div>
         <ul
-          className=" bg-slate w-full min-h-screen p-4 grid grid-cols-1
-         sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
+          className="bg-gradient-to-r from-cyan-500 to-blue-500
+       w-full min-h-screen p-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
         >
           {productoParaLaDescripcion.map((product) => (
             <li
