@@ -142,17 +142,17 @@ export function Centro() {
     <div>
       <div>
         <ul
-          className="bg-radial-[at_25%_25%] from-white to-zinc-900 to-75%
-       w-full min-h-screen p-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
+          className="bg-gradient-to-br from-gray-50 to-gray-100 w-full min-h-screen p-4 grid grid-cols-1 
+        sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
         >
           {productoParaLaDescripcion.map((product) => (
             <li
               className="bg-white w-full max-w-sm md:max-w-md lg:max-w-lg flex flex-col
-               rounded-2xl shadow-lg overflow-hidden transition-transform 
-              hover:shadow-xl hover:scale-[1.01] duration-200"
+             rounded-2xl shadow-md hover:shadow-xl transition-transform 
+             hover:scale-[1.01] duration-200 border border-gray-200"
               key={product.producto_id}
             >
-              <div className="h-64 md:h-72 lg:h-80 overflow-hidden">
+              <div className="h-64 md:h-72 lg:h-80 overflow-hidden rounded-t-2xl">
                 <img
                   src={product.img}
                   alt={product.nombre_producto}
@@ -162,32 +162,32 @@ export function Centro() {
 
               <div className="flex flex-col justify-between flex-grow p-4">
                 <div className="mb-4">
-                  <h2 className="text-lg font-semibold text-gray-800 line-clamp-1">
+                  <h2 className="text-xl font-semibold text-gray-800 line-clamp-1">
                     {product.nombre_producto}
                   </h2>
-                  <p className="text-gray-600 mt-1">
-                    Precio: <span className="font-bold">${product.precio}</span>
+                  <p className="text-gray-500 mt-1">
+                    Precio:{" "}
+                    <span className="font-bold text-indigo-600">
+                      ${product.precio}
+                    </span>
                   </p>
                 </div>
 
                 <div className="flex items-center justify-between gap-2 mt-auto">
                   <div className="flex gap-2">
                     <Buton
-                      clase=" bg-gray-200 px-3 py-1 rounded hover:bg-gray-300 cursor-pointer
-"
+                      clase="bg-gray-100 text-gray-700 px-3 py-1 rounded hover:bg-gray-200 transition-colors duration-150"
                       funcion={() => HandleMenos(product.producto_id)}
                       name="-"
                     />
                     <Buton
-                      clase=" bg-gray-200 px-3 py-1 rounded hover:bg-gray-300 cursor-pointer
-"
+                      clase="bg-gray-100 text-gray-700 px-3 py-1 rounded hover:bg-gray-200 transition-colors duration-150"
                       funcion={() => HandleMas(product.producto_id)}
                       name="+"
                     />
                   </div>
                   <Buton
-                    clase=" bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 pointer cursor-pointer
-"
+                    clase="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition-colors duration-150"
                     funcion={() => {
                       HandleAgregar(product);
                     }}
@@ -202,7 +202,6 @@ export function Centro() {
     </div>
   );
 }
-
 /*const urlCarrito = "http://localhost:3020/actualizarCarrito";
 
   function HandleAgregar(articulo) {
