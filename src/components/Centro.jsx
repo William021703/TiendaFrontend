@@ -140,11 +140,11 @@ export function Centro() {
 
   return (
     <div>
-      <div
-        className="bg-linear-to-r from-cyan-500 to-blue-500
-       w-full h-screen grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
-      >
-        <ul>
+      <div>
+        <ul
+          className="bg-gradient-to-r from-cyan-500 to-blue-500
+       w-full min-h-screen p-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
+        >
           {productoParaLaDescripcion.map((product) => (
             <li
               className="bg-slate-50 w-full max-w-sm md:max-w-md lg:max-w-lg border-2 "
