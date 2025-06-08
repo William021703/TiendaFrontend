@@ -147,38 +147,48 @@ export function Centro() {
         >
           {productoParaLaDescripcion.map((product) => (
             <li
-              className="bg-slate-50 w-full max-w-sm md:max-w-md lg:max-w-lg 
-              flex flex-col border-2 rounded-2xl "
+              className="bg-white w-full max-w-sm md:max-w-md lg:max-w-lg flex flex-col rounded-2xl shadow-md overflow-hidden transition-transform hover:scale-[1.01] duration-200"
               key={product.producto_id}
             >
-              <img
-                src={product.img}
-                alt={product.nombre_producto}
-                className="object-cover md:h-64 lg:h-80 rounded-2xl"
-              />
-              <h1>{product.nombre_producto} </h1>
-              <h1></h1>
-              <h1>Precio: {product.precio}$ </h1>
-              <div>
-                <div className="">
+              <div className="h-64 md:h-72 lg:h-80 overflow-hidden">
+                <img
+                  src={product.img}
+                  alt={product.nombre_producto}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+
+              <div className="flex flex-col justify-between flex-grow p-4">
+                <div className="mb-4">
+                  <h2 className="text-lg font-semibold text-gray-800 line-clamp-1">
+                    {product.nombre_producto}
+                  </h2>
+                  <p className="text-gray-600 mt-1">
+                    Precio: <span className="font-bold">${product.precio}</span>
+                  </p>
+                </div>
+
+                <div className="flex items-center justify-between gap-2 mt-auto">
+                  <div className="flex gap-2">
+                    <Buton
+                      clase=" bg-gray-200 px-3 py-1 rounded hover:bg-gray-300"
+                      funcion={() => HandleMenos(product.producto_id)}
+                      name="-"
+                    />
+                    <Buton
+                      clase=" bg-gray-200 px-3 py-1 rounded hover:bg-gray-300"
+                      funcion={() => HandleMas(product.producto_id)}
+                      name="+"
+                    />
+                  </div>
                   <Buton
-                    clase="menos"
-                    funcion={() => HandleMenos(product.producto_id)}
-                    name="-"
-                  />
-                  <Buton
-                    clase="mas"
-                    funcion={() => HandleMas(product.producto_id)}
-                    name="+"
+                    clase=" bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700"
+                    funcion={() => {
+                      HandleAgregar(product);
+                    }}
+                    name="Agregar"
                   />
                 </div>
-                <Buton
-                  clase="agregar"
-                  funcion={() => {
-                    HandleAgregar(product);
-                  }}
-                  name="Agregar"
-                />
               </div>
             </li>
           ))}
