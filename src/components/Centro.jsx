@@ -176,18 +176,20 @@ export function Centro() {
                 <div className="flex items-center justify-between gap-2 mt-auto">
                   <div className="flex gap-2">
                     <Buton
-                      clase="bg-gray-100 text-gray-700 px-3 py-1 rounded hover:bg-gray-200 transition-colors duration-150"
+                      clase="bg-gray-100 text-gray-700 px-3 py-1 rounded 
+                      hover:bg-gray-200 transition-colors duration-150 hover:border-4 active:bg-cyan-50"
                       funcion={() => HandleMenos(product.producto_id)}
                       name="-"
                     />
                     <Buton
-                      clase="bg-gray-100 text-gray-700 px-3 py-1 rounded hover:bg-gray-200 transition-colors duration-150"
+                      clase="bg-gray-100 text-gray-700 px-3 py-1 rounded 
+                      hover:bg-gray-200 transition-colors duration-150 hover:border-4 active:bg-cyan-50 "
                       funcion={() => HandleMas(product.producto_id)}
                       name="+"
                     />
                   </div>
                   <Buton
-                    clase="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition-colors duration-150"
+                    clase="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition-transform transition-colors duration-300 transform hover:scale-105"
                     funcion={() => {
                       HandleAgregar(product);
                     }}

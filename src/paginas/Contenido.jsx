@@ -97,7 +97,7 @@ export function Contenido() {
 
   return (
     <div className="w-full min-h-screen flex flex-col">
-      <div className="bg-amber-50 w-full h-14 flex items-center justify-between px-4 fixed top-0 z-20">
+      <div className="bg-zinc-50 w-full h-14 flex items-center justify-between px-4 fixed top-0 z-20">
         <h1 className="text-lg font-bold">Ropa deportiva</h1>
         <Carrito />
       </div>
@@ -108,7 +108,7 @@ export function Contenido() {
         <Centro />
       </div>
 
-      <div className="bg-amber-50 w-full h-14 flex items-center justify-between px-4 fixed bottom-0 z-20">
+      <div className="bg-zinc-50 w-full h-14 flex items-center justify-between px-4 fixed bottom-0 z-20">
         <TopNombre usuarioInfo={conseguirUsuarioId} />
         {permisos != 4 && (
           <div>
