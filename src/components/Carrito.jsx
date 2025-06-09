@@ -62,122 +62,67 @@ export function Carrito() {
       });
     setMostrarModal(false);
   }
-
   return (
-    <div>
-      <div style={{ position: "relative", display: "inline-block" }}>
+    <div className="relative">
+      {/* Icono del carrito y contador */}
+      <div className="flex items-center gap-2 cursor-pointer">
         <ShoppingCart size={32} color="blue" />
         <span
           onClick={abritModal}
-          style={{
-            position: "absolute",
-            top: 0,
-            right: 0,
-            background: "red",
-            color: "white",
-            borderRadius: "50%",
-            padding: "4px 8px",
-            fontSize: "10px",
-            fontWeight: "bold",
-            cursor: "grab",
-          }}
+          className="bg-red-500 text-white text-xs font-semibold px-2 py-1 rounded-full"
         >
           {contadorArticulos.length}
         </span>
       </div>
+
+      {/* Modal del carrito */}
       {mostrarModal && (
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            position: "fixed",
-            background: "rgba(145, 66, 66, 0.5)",
-            width: "300px",
-            minHeight: "30px",
-            cursor: "pointer",
-            right: "0px",
-            borderRadius: "20px",
-            fontSize: "10px",
-          }}
-        >
-          <ul
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              gap: "10px",
-              margin: "10px",
-            }}
-          >
+        <div className="absolute top-10 right-0 w-80 bg-white border border-gray-300 shadow-lg rounded-lg p-4 z-50">
+          <ul className="space-y-4 max-h-80 overflow-y-auto">
             {contadorArticulos.map((item) => (
               <li
                 key={item.producto_id}
-                style={{
-                  display: "flex",
-                  justifyContent: "space-between",
-                  alignItems: "center",
-                  borderBottom: "3px solid #ccc",
-                  gap: "40px",
-                }}
+                className="flex items-center gap-3 border-b pb-2"
               >
                 <img
                   src={item.img}
                   alt={item.nombre_producto}
-                  style={{
-                    width: "50px",
-                    height: "50px",
-                    borderRadius: "10px",
-                  }}
+                  className="w-16 h-16 object-cover rounded"
                 />
-                <h1>{item.nombre_producto} </h1>
-                <h1>{item.cantidad} </h1>
-                <h1>{item.precio} </h1>
+                <div className="flex flex-col">
+                  <h1 className="text-sm font-semibold text-gray-800">
+                    {item.nombre_producto}
+                  </h1>
+                  <h1 className="text-sm text-gray-600">
+                    Cantidad: {item.cantidad}
+                  </h1>
+                  <h1 className="text-sm text-gray-600">
+                    Precio: ${item.precio}
+                  </h1>
+                </div>
               </li>
             ))}
           </ul>
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              fontSize: "8px",
-              gap: "4px",
-            }}
-          >
+
+          {/* Botones */}
+          <div className="flex flex-col gap-2 mt-4">
             <button
-              style={{
-                width: "100px",
-                height: "20px",
-                background: "green",
-                borderRadius: "10px",
-                cursor: "grab",
-              }}
               onClick={HandleCarrito}
+              className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded transition-colors"
             >
               Ir al carrito
             </button>
             <button
-              style={{
-                width: "90px",
-                height: "20px",
-                background: "red",
-                borderRadius: "10px",
-                cursor: "grab",
-              }}
               onClick={cerrarModal}
+              className="bg-gray-300 hover:bg-gray-400 text-gray-800 px-4 py-2 rounded transition-colors"
             >
               Cerrar
             </button>
             <button
-              style={{
-                width: "90px",
-                height: "20px",
-                background: "red",
-                borderRadius: "10px",
-                cursor: "grab",
-              }}
               onClick={HandleVaciarCarrito}
+              className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded transition-colors"
             >
-              vaciar carrito
+              Vaciar carrito
             </button>
           </div>
         </div>
