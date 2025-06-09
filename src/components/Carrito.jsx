@@ -81,7 +81,7 @@ export function Carrito() {
             {contadorArticulos.map((item) => (
               <li
                 key={item.producto_id}
-                className="flex  items-center gap-3 border-b-2 p-4 hover:bg-stone-300"
+                className="flex  items-center gap-3 border-b-2 p-4 hover:bg-sky-100"
               >
                 <img
                   src={item.img}
@@ -107,19 +107,19 @@ export function Carrito() {
           <div className="flex flex-col gap-2 mt-4">
             <button
               onClick={HandleCarrito}
-              className="bg-blue-500 hover:bg-blue-600 text-white border-2 px-4 py-2 rounded transition-colors p-4"
+              className="w-60 h-10 border-2 rounded-xl  bg-linear-to-r from-cyan-500 to-blue-500 hover:bg-linear-65 hover:from-purple-500 hover:to-pink-500 transition "
             >
               Ir al carrito
             </button>
             <button
               onClick={cerrarModal}
-              className="bg-gray-300 hover:bg-gray-400 text-gray-800 border-2 px-4 py-2 rounded transition-colors p-4"
+              className="w-60 h-10 border-2 rounded-xl  bg-linear-to-r from-cyan-500 to-blue-500 hover:bg-linear-65 hover:from-purple-500 hover:to-pink-500 transition "
             >
               Cerrar
             </button>
             <button
               onClick={HandleVaciarCarrito}
-              className="bg-red-500 hover:bg-red-600 text-white border-2 px-4 py-2 rounded transition-colors p-4"
+              className="w-60 h-10 border-2 rounded-xl  bg-linear-to-r from-cyan-500 to-blue-500 hover:bg-linear-65 hover:from-purple-500 hover:to-pink-500 transition "
             >
               Vaciar carrito
             </button>
