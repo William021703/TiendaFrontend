@@ -104,6 +104,8 @@ export function Loging() {
         nombre: "",
         apellido: "",
         contrasena: "",
+        rol_id: 4,
+
       });
       setAbrirCerrar(false);
 

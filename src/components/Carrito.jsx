@@ -64,7 +64,7 @@ export function Carrito() {
   }
   return (
     <div className="relative">
-      {/* Icono del carrito y contador */}
+   
       <div className="flex items-center gap-2 cursor-pointer">
         <ShoppingCart size={32} color="blue" />
         <span
@@ -75,7 +75,6 @@ export function Carrito() {
         </span>
       </div>
 
-      {/* Modal del carrito */}
       {mostrarModal && (
         <div className="absolute top-10 right-0 w-80 bg-white border border-gray-300 shadow-lg rounded-lg p-4 z-50">
           <ul className="space-y-4 max-h-80 overflow-y-auto">
@@ -104,7 +103,7 @@ export function Carrito() {
             ))}
           </ul>
 
-          {/* Botones */}
+ 
           <div className="flex flex-col gap-2 mt-4">
             <button
               onClick={HandleCarrito}
