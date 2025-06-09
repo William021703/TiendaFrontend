@@ -76,8 +76,8 @@ export function Carrito() {
       </div>
 
       {mostrarModal && (
-        <div className="w-96 bg-sky-200 min-h-32 overfliw-y-auto ">
-          <ul className="space-y-4 max-h-80 overflow-y-auto">
+        <div className="w-96 bg-sky-200 min-h-32 overflow-y-auto right-0 top-0.5 absolute">
+         <ul className="space-y-4 max-h-80 overflow-y-auto">
             {contadorArticulos.map((item) => (
               <li
                 key={item.producto_id}

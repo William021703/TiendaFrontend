@@ -17,7 +17,7 @@ export function CrearUsuario({
       ...prev,
       [name]: value,
     }));
-    console.log("hola mundo");
+  
   }
 
   return (
