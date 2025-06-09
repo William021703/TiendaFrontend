@@ -7,7 +7,7 @@ export function TopNombre({ usuarioInfo }) {
   const navigate = useNavigate();
   function HandleCerrarSesion() {
     localStorage.removeItem("token");
-     localStorage.removeItem("usuario");
+    localStorage.removeItem("usuario");
 
     navigate("/");
   }
@@ -27,7 +27,13 @@ export function TopNombre({ usuarioInfo }) {
 
   return (
     <div>
-      <button onClick={HandleCerrarSesion}>{siglas}</button>
+      <button
+        className="hover:border-b-4 
+      hover:border-indigo-500 px-4 py-2 transition-color duration-300"
+        onClick={HandleCerrarSesion}
+      >
+        {siglas}
+      </button>
     </div>
   );
 }

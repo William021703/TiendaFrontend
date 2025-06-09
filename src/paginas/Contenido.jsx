@@ -98,7 +98,9 @@ export function Contenido() {
   return (
     <div className="w-full min-h-screen flex flex-col">
       <div className="bg-zinc-50 w-full h-14 flex items-center justify-between px-4 fixed top-0 z-20">
-        <h1 className="text-lg font-bold">Ropa deportiva</h1>
+        <h1 className="text-lg font-bold absolute left-1/2 transform -translate-x-1/2">
+          Ropa deportiva
+        </h1>
         <Carrito />
       </div>
 
@@ -120,7 +122,13 @@ export function Contenido() {
                 setAbrirCerrar={setAbrirCerrar}
               />
             ) : (
-              <button onClick={HandleAbrirCerrar}>Agregar Producto</button>
+              <button
+                className="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-linear-65 from-purple-500 to-pink-500 
+                    transition-transform transition-colors duration-300 transform hover:scale-105"
+                onClick={HandleAbrirCerrar}
+              >
+                Agregar Producto
+              </button>
             )}
           </div>
         )}
