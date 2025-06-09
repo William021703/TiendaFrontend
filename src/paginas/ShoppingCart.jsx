@@ -232,163 +232,86 @@ export function ShoppingCar() {
   }
 
   return (
-    <div
-      style={{
-        display: "grid",
-
-        height: "100vh",
-        overflow: "auto",
-      }}
-    >
-      <div
-        style={{
-          flex: "7",
-
-          paddingTop: "20px",
-        }}
-      >
+    <div className="bg-sky-100 min-h-full py-4 flex relative">
+      <div>
         <button
-          style={{
-            display: "flex",
-            cursor: "grab",
-            transition: "background-color 0.3s ease",
-            background: "lightgray",
-            margin: "5px",
-          }}
+          className="bg-linear-to-t from-sky-500 to-indigo-500 px-4 py-2 
+          transition-colors duration-150 hover:bg-gradient-to-r from-indigo-500
+           via-purple-500 to-pink-500 animate-pulse"
           onClick={() => {
             HandleRegresar();
-          }}
-          onMouseEnter={(e) => {
-            e.target.style.backgroundColor = "lightblue";
-          }}
-          onMouseLeave={(e) => {
-            e.target.style.backgroundColor = "lightgray";
           }}
         >
           regresar
         </button>
 
-        <ul
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            alignItems: "center",
-            gap: "10px",
-          }}
-        >
+        <ul className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
           {articulos.map((item) => (
             <li
-              style={{
-                display: "flex",
-                flexDirection: "row",
-                justifyContent: "space-evenly",
-                width: "70%",
-                height: "100px",
-
-                borderBottom: "1px solid black",
-                alignItems: "center",
-              }}
-              className="objeto"
               key={item.producto_id}
+              className="bg-white rounded-lg shadow-md p-4 flex flex-col items-center gap-2"
             >
-              <div>
+              <div className="w-full h-48 overflow-hidden rounded">
                 <img
                   src={item.img}
                   alt={item.nombre}
-                  style={{
-                    width: "100px",
-                    height: "50px",
-                    objectFit: "cover",
-                  }}
+                  className="w-full h-full object-cover"
                 />
               </div>
-              <div className="">
-                <h1 style={{ fontSize: "20px" }}>{item.precio} </h1>
-              </div>
-              <div style={{ alignItems: "center" }}>
-                <h1 style={{ fontSize: "20px" }}>{item.cantidad} </h1>
 
+              <div className="text-center">
+                <h1 className="text-lg font-semibold text-gray-800">
+                  ${item.precio}
+                </h1>
+                <h1 className="text-gray-600">Cantidad: {item.cantidad}</h1>
+              </div>
+
+              <div className="flex gap-2 items-center">
                 <button
-                  style={{
-                    width: "30px",
-                    height: "20px",
-                    background: "gray",
-                    borderRadius: "5px",
-                  }}
+                  className="bg-gray-200 hover:bg-gray-300 px-2 py-1 rounded"
                   onClick={() => {
                     HandleDisminuirCantidad(item);
                     setConseguirIdApi(item.producto_id);
                   }}
                 >
-                  {<TbExposureMinus1 />}
+                  <TbExposureMinus1 />
                 </button>
 
                 <button
-                  style={{
-                    width: "30px",
-                    height: "20px",
-                    background: "green",
-                    borderRadius: "5px",
-                  }}
+                  className="bg-gray-200 hover:bg-gray-300 px-2 py-1 rounded"
                   onClick={() => {
                     HandleAumentarCantidad(item);
                     setConseguirIdApi(item.producto_id);
                   }}
                 >
-                  {<TbExposurePlus1 />}
+                  <TbExposurePlus1 />
                 </button>
               </div>
+
               <button
-                style={{
-                  width: "30px",
-                  height: "50px",
-                  background: "red",
-                  borderRadius: "5px",
-                }}
-                onClick={() => {
-                  HandleEliminar(item);
-                }}
+                className="bg-red-500 hover:bg-red-600 text-white px-4 py-1 rounded mt-2"
+                onClick={() => HandleEliminar(item)}
               >
-                {<MdDelete />}
+                <MdDelete />
               </button>
             </li>
           ))}
         </ul>
-      </div>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          textAlign: "center",
-          justifyContent: "space-evenly",
-          background: "white",
-          padding: "10",
 
-          fontSize: "10px",
-          position: "fixed",
-          bottom: "0",
-          left: "500px",
-          zIndex: "10px",
-        }}
-      >
-        <h1>Cantidad de articulos:{cantidades} </h1>
-        <h1>Total a pagar:{total} </h1>
-        <button
-          style={{
-            width: "200px",
-            height: "50px",
-            background: "blue",
-            borderRadius: "10px",
-            cursor: "grab",
-            color: "white",
-            fontSize: "20px",
-          }}
-          onClick={HandlePagar}
-        >
-          Comprar
-        </button>
+        {/* Total y botón pagar */}
+        <div className="mt-8 text-center">
+          <h1 className="text-xl font-medium">
+            Cantidad de artículos: {cantidades}
+          </h1>
+          <h1 className="text-xl font-medium mb-4">Total a pagar: ${total}</h1>
+
+          <button
+            className="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-lg transition-colors duration-300"
+            onClick={HandlePagar}
+          >
+            Comprar
+          </button>
+        </div>
       </div>
     </div>
   );

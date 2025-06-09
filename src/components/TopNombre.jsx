@@ -28,7 +28,7 @@ export function TopNombre({ usuarioInfo }) {
   return (
     <div>
       <button
-        className="hover:border-b-4 
+        className="hover:border-b-4 border-b-0
       hover:border-indigo-500 px-4 py-2 transition-color duration-300"
         onClick={HandleCerrarSesion}
       >
