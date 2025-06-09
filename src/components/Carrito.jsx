@@ -63,7 +63,7 @@ export function Carrito() {
     setMostrarModal(false);
   }
   return (
-    <div className="relative">
+    <div className="relative min-w-full">
    
       <div className="flex items-center gap-2 cursor-pointer">
         <ShoppingCart size={32} color="blue" />
