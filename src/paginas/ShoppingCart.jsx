@@ -233,25 +233,22 @@ export function ShoppingCar() {
 
   return (
     <div className="bg-sky-100 min-h-screen py-4 px-2 relative">
-      {/* Botón regresar sticky arriba */}
-      <div className="sticky top-0 bg-sky-100 z-10 p-2">
+      <div className="sticky top-0 z-10 bg-sky-100 p-2 border-b border-gray-300">
         <button
-          className="bg-gradient-to-r from-sky-500 to-indigo-500 text-white px-4 py-2 rounded hover:bg-indigo-600"
+          className="bg-gradient-to-r from-sky-500 to-indigo-500 text-white px-4 py-2 rounded hover:bg-indigo-600 transition"
           onClick={HandleRegresar}
         >
           Regresar
         </button>
       </div>
 
-      {/* Lista de artículos en vertical */}
       <ul className="flex flex-col gap-4">
         {articulos.map((item) => (
           <li
             key={item.producto_id}
-            className="bg-white rounded-lg shadow-md p-4 flex gap-4 items-center"
+            className="bg-white rounded-lg shadow-md p-4 flex flex-col sm:flex-row gap-4 items-center"
           >
-            {/* Imagen */}
-            <div className="w-32 h-32 rounded overflow-hidden">
+            <div className="w-full sm:w-32 h-32 rounded overflow-hidden">
               <img
                 src={item.img}
                 alt={item.nombre}
@@ -259,8 +256,7 @@ export function ShoppingCar() {
               />
             </div>
 
-            {/* Detalles del producto */}
-            <div className="flex-1">
+            <div className="flex-1 text-center sm:text-left">
               <h1 className="text-lg font-semibold text-gray-800">
                 {item.nombre}
               </h1>
@@ -268,8 +264,7 @@ export function ShoppingCar() {
               <p className="text-gray-800 font-medium">${item.precio}</p>
             </div>
 
-            {/* Botones de acción */}
-            <div className="flex flex-col gap-2">
+            <div className="flex sm:flex-col gap-2">
               <div className="flex gap-2">
                 <button
                   className="bg-gray-200 hover:bg-gray-300 px-2 py-1 rounded"
@@ -290,9 +285,8 @@ export function ShoppingCar() {
                   <TbExposurePlus1 />
                 </button>
               </div>
-
               <button
-                className="bg-red-500 hover:bg-red-600 text-white px-2 py-1 rounded"
+                className="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded"
                 onClick={() => HandleEliminar(item)}
               >
                 <MdDelete />
@@ -302,7 +296,6 @@ export function ShoppingCar() {
         ))}
       </ul>
 
-      {/* Total y botón pagar sticky abajo */}
       <div className="sticky bottom-0 bg-sky-100 z-10 p-4 mt-6 border-t border-gray-300">
         <div className="text-center">
           <h1 className="text-lg font-medium">
@@ -310,7 +303,7 @@ export function ShoppingCar() {
           </h1>
           <h1 className="text-lg font-medium mb-2">Total a pagar: ${total}</h1>
           <button
-            className="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-lg transition-colors duration-300"
+            className="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-lg transition duration-300"
             onClick={HandlePagar}
           >
             Comprar
