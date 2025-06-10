@@ -232,41 +232,45 @@ export function ShoppingCar() {
   }
 
   return (
-    <div className="bg-sky-100 min-h-full py-4 flex relative">
-      <div>
+    <div className="bg-sky-100 min-h-screen py-4 px-2 relative">
+      {/* Botón regresar sticky arriba */}
+      <div className="sticky top-0 bg-sky-100 z-10 p-2">
         <button
-          className="bg-linear-to-t from-sky-500 to-indigo-500 px-4 py-2 
-          transition-colors duration-150 hover:bg-gradient-to-r from-indigo-500
-           via-purple-500 to-pink-500 animate-pulse"
-          onClick={() => {
-            HandleRegresar();
-          }}
+          className="bg-gradient-to-r from-sky-500 to-indigo-500 text-white px-4 py-2 rounded hover:bg-indigo-600"
+          onClick={HandleRegresar}
         >
-          regresar
+          Regresar
         </button>
+      </div>
 
-        <ul className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-          {articulos.map((item) => (
-            <li
-              key={item.producto_id}
-              className="bg-white rounded-lg shadow-md p-4 flex flex-col items-center gap-2"
-            >
-              <div className="w-full h-48 overflow-hidden rounded">
-                <img
-                  src={item.img}
-                  alt={item.nombre}
-                  className="w-full h-full object-cover"
-                />
-              </div>
+      {/* Lista de artículos en vertical */}
+      <ul className="flex flex-col gap-4">
+        {articulos.map((item) => (
+          <li
+            key={item.producto_id}
+            className="bg-white rounded-lg shadow-md p-4 flex gap-4 items-center"
+          >
+            {/* Imagen */}
+            <div className="w-32 h-32 rounded overflow-hidden">
+              <img
+                src={item.img}
+                alt={item.nombre}
+                className="w-full h-full object-cover"
+              />
+            </div>
 
-              <div className="text-center">
-                <h1 className="text-lg font-semibold text-gray-800">
-                  ${item.precio}
-                </h1>
-                <h1 className="text-gray-600">Cantidad: {item.cantidad}</h1>
-              </div>
+            {/* Detalles del producto */}
+            <div className="flex-1">
+              <h1 className="text-lg font-semibold text-gray-800">
+                {item.nombre}
+              </h1>
+              <p className="text-gray-600">Cantidad: {item.cantidad}</p>
+              <p className="text-gray-800 font-medium">${item.precio}</p>
+            </div>
 
-              <div className="flex gap-2 items-center">
+            {/* Botones de acción */}
+            <div className="flex flex-col gap-2">
+              <div className="flex gap-2">
                 <button
                   className="bg-gray-200 hover:bg-gray-300 px-2 py-1 rounded"
                   onClick={() => {
@@ -276,7 +280,6 @@ export function ShoppingCar() {
                 >
                   <TbExposureMinus1 />
                 </button>
-
                 <button
                   className="bg-gray-200 hover:bg-gray-300 px-2 py-1 rounded"
                   onClick={() => {
@@ -289,22 +292,23 @@ export function ShoppingCar() {
               </div>
 
               <button
-                className="bg-red-500 hover:bg-red-600 text-white px-4 py-1 rounded mt-2"
+                className="bg-red-500 hover:bg-red-600 text-white px-2 py-1 rounded"
                 onClick={() => HandleEliminar(item)}
               >
                 <MdDelete />
               </button>
-            </li>
-          ))}
-        </ul>
+            </div>
+          </li>
+        ))}
+      </ul>
 
-        {/* Total y botón pagar */}
-        <div className="mt-8 text-center">
-          <h1 className="text-xl font-medium">
+      {/* Total y botón pagar sticky abajo */}
+      <div className="sticky bottom-0 bg-sky-100 z-10 p-4 mt-6 border-t border-gray-300">
+        <div className="text-center">
+          <h1 className="text-lg font-medium">
             Cantidad de artículos: {cantidades}
           </h1>
-          <h1 className="text-xl font-medium mb-4">Total a pagar: ${total}</h1>
-
+          <h1 className="text-lg font-medium mb-2">Total a pagar: ${total}</h1>
           <button
             className="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-lg transition-colors duration-300"
             onClick={HandlePagar}
