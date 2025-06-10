@@ -62,7 +62,7 @@ export function Loging() {
       console.log(datos.usuario);
       localStorage.setItem("token", datos.token);
       localStorage.setItem("usuario", JSON.stringify(datos.usuario));
-      setUsuarioId(datos.usuario);
+      setUsuarioId(datos.id);
       setLogging({ nombre: "", contrasena: "" });
       navigate("/productos");
     } catch (error) {

@@ -114,7 +114,7 @@ export function Contenido() {
 
       <div className="bg-zinc-50 w-full h-14 flex items-center justify-between px-4 fixed bottom-0 z-20">
         <TopNombre usuarioInfo={conseguirUsuarioId} />
-        {(usuarioId.id == 1 || usuarioId.id == 2) && (
+        {(usuarioId == 1 || usuarioId == 2) && (
           <div>
             {abrirCerrar ? (
               <AgregarProducto
