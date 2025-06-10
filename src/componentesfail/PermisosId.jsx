@@ -2,12 +2,12 @@ import { createContext, useState } from "react";
 
 export const PermisosContext = createContext();
 
-export const UserProvider = ({ children }) => {
+export const PermisosId = ({ children }) => {
   const [usuarioId, setUsuarioId] = useState(null);
 
   return (
-    <UserContext.Provider value={{ usuarioId, setUsuarioId }}>
+    <PermisosContext.Provider value={{ usuarioId, setUsuarioId }}>
       {children}
-    </UserContext.Provider>
+    </PermisosContext.Provider>
   );
 };
