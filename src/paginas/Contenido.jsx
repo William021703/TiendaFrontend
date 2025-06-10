@@ -2,8 +2,9 @@ import { Centro } from "../components/Centro";
 import { TopNombre } from "../components/TopNombre";
 import { Carrito } from "../components/Carrito";
 import { useNavigate } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AgregarProducto } from "../components/CrearProducto";
+import { PermisosContext } from "../componentesfail/PermisosId";
 
 export function Contenido() {
   const [conseguirUsuarioId, setConseguirUsuarioId] = useState({});
@@ -14,8 +15,9 @@ export function Contenido() {
     img: "",
     cantidad: "",
   });
-  const [permisos, setPermisos] = useState();
+
   const [abrirCerrar, setAbrirCerrar] = useState(false);
+  const { usuarioId, setUsuarioId } = useContext(PermisosContext);
 
   const navigate = useNavigate();
 
@@ -30,7 +32,6 @@ export function Contenido() {
       const usuarioRaw = localStorage.getItem("usuario");
       const usuario = usuarioRaw ? JSON.parse(usuarioRaw) : null;
       const id = usuario?.id;
-      setPermisos(id);
 
       if (id) {
         fetch(`https://tienda-production-852a.up.railway.app/usuario/${id}`)
@@ -113,7 +114,7 @@ export function Contenido() {
 
       <div className="bg-zinc-50 w-full h-14 flex items-center justify-between px-4 fixed bottom-0 z-20">
         <TopNombre usuarioInfo={conseguirUsuarioId} />
-        {(permisos == 1 || permisos == 2) && (
+        {(usuarioId.id == 1 || usuarioId.id == 2) && (
           <div>
             {abrirCerrar ? (
               <AgregarProducto

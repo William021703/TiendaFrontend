@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-
+import { useContext, useEffect, useState } from "react";
+import { PermisosContext } from "../componentesfail/PermisosId";
 import { useNavigate } from "react-router-dom";
 import { CrearUsuario } from "../components/CrearUsuario";
 
@@ -16,6 +16,7 @@ export function Loging() {
   });
   const [abrirCerrar, setAbrirCerrar] = useState(true);
   const [registrarse, setRegistrarse] = useState(false);
+  const { setUsuarioId } = useContext(PermisosContext);
 
   const navigate = useNavigate();
 
@@ -61,6 +62,7 @@ export function Loging() {
       console.log(datos.usuario);
       localStorage.setItem("token", datos.token);
       localStorage.setItem("usuario", JSON.stringify(datos.usuario));
+      setUsuarioId(datos.usuario);
       setLogging({ nombre: "", contrasena: "" });
       navigate("/productos");
     } catch (error) {

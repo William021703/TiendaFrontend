@@ -1,14 +1,17 @@
 import { Rutas } from "./rutas/Rutas";
 import { DatosCarritoProvider } from "./componentesfail/DatosParaCarrito";
+import { PermisosId } from "./componentesfail/PermisosId";
 import { BrowserRouter as Router } from "react-router-dom";
 
 function App() {
   return (
     <div>
       <Router>
-        <DatosCarritoProvider>
-          <Rutas />
-        </DatosCarritoProvider>
+        <PermisosId>
+          <DatosCarritoProvider>
+            <Rutas />
+          </DatosCarritoProvider>
+        </PermisosId>
       </Router>
     </div>
   );
