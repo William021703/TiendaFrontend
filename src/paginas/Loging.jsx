@@ -69,7 +69,6 @@ export function Loging() {
   }
 
   function HandleAbrirCerrar() {
-    setAbrirCerrar(true);
     setRegistrarse(true);
   }
 
@@ -109,7 +108,8 @@ export function Loging() {
         rol_id: 4,
       });
 
-      setAbrirCerrar(false);
+      setAbrirCerrar(true);
+      setRegistrarse(false);
 
       navigate("/");
     } catch (error) {
