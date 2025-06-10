@@ -71,6 +71,7 @@ export function CrearUsuario({
 
         <button
           type="submit"
+          onClick={HandleCrearUsuario}
           className="w-60 h-10 border-2 rounded-xl mt-2 bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-purple-500 hover:to-pink-500 transition"
         >
           Crear usuario
