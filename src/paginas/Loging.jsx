@@ -74,6 +74,7 @@ export function Loging() {
   }
 
   async function HandleCrearUsuario(e) {
+    console.log("antes de crear el usuario");
     e.preventDefault();
     if (
       nuevoUsuario.nombre === "" ||
@@ -100,11 +101,14 @@ export function Loging() {
       }
       const datos = await response.json();
       console.log(datos);
+      console.log("se creo el usuario");
       setNuevoUsuario({
         nombre: "",
         apellido: "",
         contrasena: "",
+        rol_id: 4,
       });
+
       setAbrirCerrar(false);
 
       navigate("/");
