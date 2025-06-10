@@ -30,6 +30,7 @@ export function Contenido() {
       const usuarioRaw = localStorage.getItem("usuario");
       const usuario = usuarioRaw ? JSON.parse(usuarioRaw) : null;
       const id = usuario?.id;
+      setPermisos(id);
 
       if (id) {
         fetch(`https://tienda-production-852a.up.railway.app/usuario/${id}`)
@@ -112,7 +113,7 @@ export function Contenido() {
 
       <div className="bg-zinc-50 w-full h-14 flex items-center justify-between px-4 fixed bottom-0 z-20">
         <TopNombre usuarioInfo={conseguirUsuarioId} />
-        {permisos != 4 && (
+        {(permisos == 1 || permisos == 2) && (
           <div>
             {abrirCerrar ? (
               <AgregarProducto
