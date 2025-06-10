@@ -63,7 +63,7 @@ export function Carrito() {
     setMostrarModal(false);
   }
   return (
-    <div className="relative">
+    <div className="relative min-w-full">
       <div className="flex items-center gap-2 cursor-pointer">
         <ShoppingCart size={32} color="blue" />
         <span
@@ -75,12 +75,12 @@ export function Carrito() {
       </div>
 
       {mostrarModal && (
-        <div className="absolute top-10 right-0 w-80 bg-white border border-gray-300 shadow-lg rounded-lg p-4 z-50">
+        <div className="w-96 bg-sky-200 min-h-32 overflow-y-auto right-0 top-0.5 absolute rounded-2xl">
           <ul className="space-y-4 max-h-80 overflow-y-auto">
             {contadorArticulos.map((item) => (
               <li
                 key={item.producto_id}
-                className="flex items-center gap-3 border-b pb-2"
+                className="flex  items-center gap-3 border-b-2 p-4 hover:bg-sky-100"
               >
                 <img
                   src={item.img}
@@ -102,23 +102,22 @@ export function Carrito() {
             ))}
           </ul>
 
-          {/* Botones */}
           <div className="flex flex-col gap-2 mt-4 justify-center items-center">
             <button
               onClick={HandleCarrito}
-              className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded transition-colors"
+              className="w-60 h-10 border-2 rounded-xl  bg-linear-to-r from-cyan-500 to-blue-500 hover:bg-linear-65 hover:from-purple-500 hover:to-pink-500 transition "
             >
               Ir al carrito
             </button>
             <button
               onClick={cerrarModal}
-              className="bg-gray-300 hover:bg-gray-400 text-gray-800 px-4 py-2 rounded transition-colors"
+              className="w-60 h-10 border-2 rounded-xl  bg-linear-to-r from-cyan-500 to-blue-500 hover:bg-linear-65 hover:from-purple-500 hover:to-pink-500 transition "
             >
               Cerrar
             </button>
             <button
               onClick={HandleVaciarCarrito}
-              className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded transition-colors"
+              className="w-60 h-10 border-2 rounded-xl  bg-linear-to-r from-cyan-500 to-blue-500 hover:bg-linear-65 hover:from-purple-500 hover:to-pink-500 transition "
             >
               Vaciar carrito
             </button>
