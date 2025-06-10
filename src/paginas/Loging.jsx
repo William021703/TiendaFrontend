@@ -143,7 +143,7 @@ export function Loging() {
           <CrearUsuario
             nuevoUsuario={nuevoUsuario}
             setNuevoUsuario={setNuevoUsuario}
-            funcion={HandleCrearUsuario}
+            HandleCrearUsuario={HandleCrearUsuario}
             setRegistrarse={setRegistrarse}
             setAbrirCerrar={setAbrirCerrar}
           />

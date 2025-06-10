@@ -29,10 +29,7 @@ export function CrearUsuario({
         Cerrar
       </button>
 
-      <form
-        onSubmit={HandleCrearUsuario}
-        className="w-96 h-96 flex flex-col items-center"
-      >
+      <form className="w-96 h-96 flex rounded-2xl border-transparent  flex-col justify-evenly items-center shadow-xl animate-pulse">
         <div className="flex flex-col gap-1.5">
           <label className="text-2xl px-4" htmlFor="nombre">
             Nombre
@@ -74,6 +71,7 @@ export function CrearUsuario({
 
         <button
           type="submit"
+          onClick={HandleCrearUsuario}
           className="w-60 h-10 border-2 rounded-xl mt-2 bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-purple-500 hover:to-pink-500 transition"
         >
           Crear usuario
