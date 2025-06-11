@@ -235,7 +235,7 @@ export function ShoppingCar() {
     <div className="bg-sky-100 min-h-screen py-4 px-2 relative">
       <div className="sticky top-0 z-10 bg-sky-100 p-2 border-b border-gray-300">
         <button
-          className="bg-gradient-to-r from-sky-500 to-indigo-500 text-white px-4 py-2 rounded hover:bg-indigo-600 transition"
+          className="cursor-pointer bg-gradient-to-r from-sky-500 to-indigo-500 text-white px-4 py-2 rounded hover:bg-indigo-600 transition cursor-pointer"
           onClick={HandleRegresar}
         >
           Regresar
@@ -303,7 +303,7 @@ export function ShoppingCar() {
           </h1>
           <h1 className="text-lg font-medium mb-2">Total a pagar: ${total}</h1>
           <button
-            className="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-lg transition duration-300"
+            className="cursor-pointer bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-lg transition duration-300"
             onClick={HandlePagar}
           >
             Comprar

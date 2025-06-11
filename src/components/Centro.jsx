@@ -166,9 +166,12 @@ export function Centro() {
                     {product.nombre_producto}
                   </h2>
                   <p className="text-gray-500 mt-1">
-                    Precio:{" "}
+                    Precio:
                     <span className="font-bold text-indigo-600">
                       ${product.precio}
+                    </span>
+                    <span className="font-bold text-indigo-600">
+                      ${product.cantidad}
                     </span>
                   </p>
                 </div>
@@ -177,20 +180,20 @@ export function Centro() {
                   <div className="flex gap-2">
                     <Buton
                       clase="bg-gray-100 text-gray-700 px-3 py-1 rounded-xl 
-                      hover:bg-gray-200 transition-colors duration-150 hover:border-2 active:bg-cyan-50"
+                      hover:bg-gray-200 transition-colors duration-150 hover:border- active:bg-cyan-50 cursor-pointer"
                       funcion={() => HandleMenos(product.producto_id)}
                       name="-"
                     />
                     <Buton
                       clase="bg-gray-100 text-gray-700 px-3 py-1 rounded-xl
-                      hover:bg-gray-200 transition-colors duration-150 hover:border-2 active:bg-cyan-50 "
+                      hover:bg-gray-200 transition-colors duration-150 hover:border-2 active:bg-cyan-50 cursor-pointer"
                       funcion={() => HandleMas(product.producto_id)}
                       name="+"
                     />
                   </div>
                   <Buton
                     clase="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 
-                    transition-transform transition-colors duration-300 transform hover:scale-105"
+                    transition-transform transition-colors duration-300 transform hover:scale-105 cursor-pointer"
                     funcion={() => {
                       HandleAgregar(product);
                     }}
