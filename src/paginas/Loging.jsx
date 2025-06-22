@@ -184,7 +184,7 @@ export function Loging() {
                         onChange={HandleLoggin}
                         className="w-60 h-10 px-4 border-0 border-b-2 border-blue-500 focus:border-blue-500 focus:outline-none text-2xl"
                       />
-                      <h1 className="text-2xl text-amber-800">
+                      <h1 className="text-sm text-amber-800">
                         {validacion ? "error al hacer login" : ""}
                       </h1>
                     </div>
@@ -200,7 +200,7 @@ export function Loging() {
                         onChange={HandleLoggin}
                         className="w-60 h-10 px-4 border-0 border-b-2 border-blue-500 focus:border-blue-500 focus:outline-none text-2xl"
                       />
-                      <h1 className="text-2xl text-amber-800">
+                      <h1 className="text-sm text-amber-800">
                         {validacion ? "error al hacer login" : ""}
                       </h1>
                     </div>
