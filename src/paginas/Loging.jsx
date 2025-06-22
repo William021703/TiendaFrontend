@@ -16,6 +16,7 @@ export function Loging() {
   });
   const [abrirCerrar, setAbrirCerrar] = useState(true);
   const [registrarse, setRegistrarse] = useState(false);
+  const [validacion, setValidacion] = useState(false);
   const { setUsuarioId } = useContext(PermisosContext);
 
   const navigate = useNavigate();
@@ -26,6 +27,15 @@ export function Loging() {
       navigate("/productos");
     }
   }, [navigate]);
+
+  useEffect(() => {
+    if (validacion) {
+      const timer = setTimeout(() => {
+        setValidacion(false);
+      }, 2000);
+      return () => clearTimeout(timer);
+    }
+  }, [validacion]);
 
   function HandleLoggin(e) {
     const { name, value } = e.target;
@@ -55,6 +65,7 @@ export function Loging() {
       );
 
       if (!response.ok) {
+        setValidacion(true);
         const errorData = await response.json();
         throw new Error(errorData.message || "Error en el servidor");
       }
@@ -173,6 +184,9 @@ export function Loging() {
                         onChange={HandleLoggin}
                         className="w-60 h-10 px-4 border-0 border-b-2 border-blue-500 focus:border-blue-500 focus:outline-none text-2xl"
                       />
+                      <h1 className="text-2xl text-amber-800">
+                        {validacion ? "error al hacer login" : ""}
+                      </h1>
                     </div>
 
                     <div className="flex flex-col gap-1.5">
@@ -186,6 +200,9 @@ export function Loging() {
                         onChange={HandleLoggin}
                         className="w-60 h-10 px-4 border-0 border-b-2 border-blue-500 focus:border-blue-500 focus:outline-none text-2xl"
                       />
+                      <h1 className="text-2xl text-amber-800">
+                        {validacion ? "error al hacer login" : ""}
+                      </h1>
                     </div>
 
                     <button
