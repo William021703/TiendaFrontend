@@ -49,7 +49,7 @@ export function Loging() {
   async function Login(e) {
     e.preventDefault();
     if (logging.nombre == "" || logging.contrasena == "") {
-      alert("Ambos campos son requeridos");
+      validacion(true);
       return;
     }
     try {
@@ -87,7 +87,6 @@ export function Loging() {
   }
 
   async function HandleCrearUsuario(e) {
-    console.log("antes de crear el usuario");
     e.preventDefault();
     if (
       nuevoUsuario.nombre === "" ||
@@ -114,8 +113,7 @@ export function Loging() {
         throw new Error(errorData.message || "Error en el servidor");
       }
       const datos = await response.json();
-      console.log(datos);
-      console.log("se creo el usuario");
+
       setNuevoUsuario({
         nombre: "",
         apellido: "",

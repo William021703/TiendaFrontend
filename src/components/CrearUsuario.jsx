@@ -55,7 +55,7 @@ export function CrearUsuario({
             className="w-60 h-10 px-4 border-0 border-b-2 border-blue-500 focus:outline-none text-2xl"
           />
           <h1 className="text-sm text-amber-600">
-            {camposRequeridos ? "Todos los campos son requeridos" : ""}{" "}
+            {camposRequeridos ? "Todos los campos son requeridos" : ""}
           </h1>
         </div>
 
@@ -71,7 +71,7 @@ export function CrearUsuario({
             className="w-60 h-10 px-4 border-0 border-b-2 border-blue-500 focus:outline-none text-2xl"
           />
           <h1 className="text-sm text-amber-600">
-            {camposRequeridos ? "Todos los campos son requeridos" : ""}{" "}
+            {camposRequeridos ? "Todos los campos son requeridos" : ""}
           </h1>
         </div>
 
@@ -87,7 +87,7 @@ export function CrearUsuario({
             className="w-60 h-10 px-4 border-0 border-b-2 border-blue-500 focus:outline-none text-2xl"
           />
           <h1 className="text-sm text-amber-600">
-            {camposRequeridos ? "Todos los campos son requeridos" : ""}{" "}
+            {camposRequeridos ? "Todos los campos son requeridos" : ""}
           </h1>
         </div>
 
