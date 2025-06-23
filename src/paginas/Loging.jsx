@@ -49,7 +49,7 @@ export function Loging() {
   async function Login(e) {
     e.preventDefault();
     if (logging.nombre == "" || logging.contrasena == "") {
-      validacion(true);
+      setValidacion(true);
       return;
     }
     try {
