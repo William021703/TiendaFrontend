@@ -17,6 +17,7 @@ export function Loging() {
   const [abrirCerrar, setAbrirCerrar] = useState(true);
   const [registrarse, setRegistrarse] = useState(false);
   const [validacion, setValidacion] = useState(false);
+  const [camposRequeridos, setCamposRequeridos] = useState(false);
   const { setUsuarioId } = useContext(PermisosContext);
 
   const navigate = useNavigate();
@@ -93,7 +94,8 @@ export function Loging() {
       nuevoUsuario.apellido === "" ||
       nuevoUsuario.contrasena === ""
     ) {
-      alert("Todos los  campos son requeridos");
+      setCamposRequeridos(true);
+
       return;
     }
     try {
@@ -159,6 +161,8 @@ export function Loging() {
             HandleCrearUsuario={HandleCrearUsuario}
             setRegistrarse={setRegistrarse}
             setAbrirCerrar={setAbrirCerrar}
+            setCamposRequeridos={setCamposRequeridos}
+            camposRequeridos={camposRequeridos}
           />
         ) : (
           <div className="bg-blur-xs backdrop-blur w-[360px] max-w-full flex flex-col absolute left-1/2 top-[25%] -translate-x-1/2 z-10 rounded-2xl p-6 items-center shadow-xl animate-pulse">
@@ -186,6 +190,9 @@ export function Loging() {
                       />
                       <h1 className="text-sm text-amber-800">
                         {validacion ? "error al hacer login" : ""}
+                        {camposRequeridos
+                          ? "todos los campos son requeridos"
+                          : ""}
                       </h1>
                     </div>
 
@@ -202,6 +209,9 @@ export function Loging() {
                       />
                       <h1 className="text-sm text-amber-800">
                         {validacion ? "error al hacer login" : ""}
+                        {camposRequeridos
+                          ? "todos los campos son requeridos"
+                          : ""}
                       </h1>
                     </div>
 

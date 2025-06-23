@@ -1,15 +1,28 @@
+import { useEffect } from "react";
+
 export function CrearUsuario({
   nuevoUsuario,
   setNuevoUsuario,
   HandleCrearUsuario,
   setAbrirCerrar,
   setRegistrarse,
+  camposRequeridos,
+  setCamposRequeridos,
 }) {
   function HandleCerrar() {
     setRegistrarse(false);
     setAbrirCerrar(true);
     console.log("hola mundo");
   }
+
+  useEffect(() => {
+    if (camposRequeridos) {
+      const time = setTimeout(() => {
+        setCamposRequeridos(false);
+      }, 2000);
+      return () => clearTimeout(time);
+    }
+  }, [camposRequeridos]);
 
   function HandleInputChange(e) {
     const { name, value } = e.target;
@@ -41,6 +54,7 @@ export function CrearUsuario({
             onChange={HandleInputChange}
             className="w-60 h-10 px-4 border-0 border-b-2 border-blue-500 focus:outline-none text-2xl"
           />
+          <h1>{camposRequeridos ? "Todos los campos son requeridos" : ""} </h1>
         </div>
 
         <div className="flex flex-col gap-1.5">
@@ -54,6 +68,7 @@ export function CrearUsuario({
             onChange={HandleInputChange}
             className="w-60 h-10 px-4 border-0 border-b-2 border-blue-500 focus:outline-none text-2xl"
           />
+          <h1>{camposRequeridos ? "Todos los campos son requeridos" : ""} </h1>
         </div>
 
         <div className="flex flex-col gap-1.5">
@@ -67,6 +82,7 @@ export function CrearUsuario({
             onChange={HandleInputChange}
             className="w-60 h-10 px-4 border-0 border-b-2 border-blue-500 focus:outline-none text-2xl"
           />
+          <h1>{camposRequeridos ? "Todos los campos son requeridos" : ""} </h1>
         </div>
 
         <button
