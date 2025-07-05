@@ -170,8 +170,9 @@ export function Centro() {
                     <span className="font-bold text-indigo-600">
                       ${product.precio}
                     </span>
+                    <br />
                     <span className="font-bold text-indigo-600">
-                      ${product.cantidad}
+                      {product.cantidad}
                     </span>
                   </p>
                 </div>
