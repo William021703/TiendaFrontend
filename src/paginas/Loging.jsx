@@ -184,7 +184,8 @@ export function Loging() {
                         name="nombre"
                         value={logging.nombre}
                         onChange={HandleLoggin}
-                        className="w-60 h-10 px-4 border-0 border-b-2 border-blue-500 focus:border-blue-500 focus:outline-none text-2xl"
+                        className="w-60 h-10 px-4 border-0 border-b-2 border-blue-500 focus:border-blue-500 
+                        focus:outline-none text-2xl cursor-pointer"
                       />
                       <h1 className="text-sm text-amber-800">
                         {validacion ? "error al hacer login" : ""}
@@ -203,7 +204,8 @@ export function Loging() {
                         name="contrasena"
                         value={logging.contrasena}
                         onChange={HandleLoggin}
-                        className="w-60 h-10 px-4 border-0 border-b-2 border-blue-500 focus:border-blue-500 focus:outline-none text-2xl"
+                        className="w-60 h-10 px-4 border-0 border-b-2 border-blue-500 focus:border-blue-500 
+                        focus:outline-none text-2xl cursor-pointer"
                       />
                       <h1 className="text-sm text-amber-800">
                         {validacion ? "error al hacer login" : ""}
@@ -214,7 +216,8 @@ export function Loging() {
                     </div>
 
                     <button
-                      className="w-60 h-10 border-2 rounded-xl  bg-linear-to-r from-cyan-500 to-blue-500 hover:bg-linear-65 hover:from-purple-500 hover:to-pink-500 transition "
+                      className="w-60 h-10 border-2 rounded-xl  bg-linear-to-r from-cyan-500 to-blue-500 
+                      hover:bg-linear-65 hover:from-purple-500 hover:to-pink-500 transition cursor-pointer"
                       type="submit"
                       onClick={Login}
                     >
@@ -231,7 +234,8 @@ export function Loging() {
                     onClick={() => {
                       HandleAbrirCerrar();
                     }}
-                    className="w-60 h-10 border-2 rounded-xl  bg-linear-to-r from-cyan-500 to-blue-500 hover:bg-linear-65 hover:from-purple-500 hover:to-pink-500 transition "
+                    className="w-60 h-10 border-2 rounded-xl  bg-linear-to-r from-cyan-500 to-blue-500 
+                    hover:bg-linear-65 hover:from-purple-500 hover:to-pink-500 transition cursor-pointer"
                   >
                     Crear Usuario
                   </button>
