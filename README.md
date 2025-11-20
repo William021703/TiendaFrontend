@@ -22,7 +22,7 @@ Contraseña: 1234
 
 Usar estos datos para completar el checkout:
 
-Correo: 02gmail.com
+Correo: demo123@gmail.com
 
 Nombre del titular: usuario
 
