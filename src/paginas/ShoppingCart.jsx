@@ -267,7 +267,7 @@ export function ShoppingCar() {
             <div className="flex sm:flex-col gap-2">
               <div className="flex gap-2">
                 <button
-                  className="bg-gray-200 hover:bg-gray-300 px-2 py-1 rounded"
+                  className="bg-gray-200 hover:bg-gray-300 px-2 py-1 rounded cursor-pointer"
                   onClick={() => {
                     HandleDisminuirCantidad(item);
                     setConseguirIdApi(item.producto_id);
@@ -276,7 +276,7 @@ export function ShoppingCar() {
                   <TbExposureMinus1 />
                 </button>
                 <button
-                  className="bg-gray-200 hover:bg-gray-300 px-2 py-1 rounded"
+                  className="bg-gray-200 hover:bg-gray-300 px-2 py-1 rounded cursor-pointer"
                   onClick={() => {
                     HandleAumentarCantidad(item);
                     setConseguirIdApi(item.producto_id);
@@ -286,7 +286,7 @@ export function ShoppingCar() {
                 </button>
               </div>
               <button
-                className="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded"
+                className="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded cursor-pointer"
                 onClick={() => HandleEliminar(item)}
               >
                 <MdDelete />

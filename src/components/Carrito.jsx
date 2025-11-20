@@ -105,19 +105,22 @@ export function Carrito() {
           <div className="flex flex-col gap-2 mt-4 justify-center items-center">
             <button
               onClick={HandleCarrito}
-              className="w-60 h-10 border-2 rounded-xl  bg-linear-to-r from-cyan-500 to-blue-500 hover:bg-linear-65 hover:from-purple-500 hover:to-pink-500 transition "
+              className="w-60 h-10 border-2 rounded-xl  bg-linear-to-r from-cyan-500 cursor-pointer
+              to-blue-500 hover:bg-linear-65 hover:from-purple-500 hover:to-pink-500 transition "
             >
               Ir al carrito
             </button>
             <button
               onClick={cerrarModal}
-              className="w-60 h-10 border-2 rounded-xl  bg-linear-to-r from-cyan-500 to-blue-500 hover:bg-linear-65 hover:from-purple-500 hover:to-pink-500 transition "
+              className="w-60 h-10 border-2 rounded-xl  bg-linear-to-r from-cyan-500 cursor-pointer
+               to-blue-500 hover:bg-linear-65 hover:from-purple-500 hover:to-pink-500 transition "
             >
               Cerrar
             </button>
             <button
               onClick={HandleVaciarCarrito}
-              className="w-60 h-10 border-2 rounded-xl  bg-linear-to-r from-cyan-500 to-blue-500 hover:bg-linear-65 hover:from-purple-500 hover:to-pink-500 transition "
+              className="w-60 h-10 border-2 rounded-xl  bg-linear-to-r from-cyan-500 cursor-pointer
+               to-blue-500 hover:bg-linear-65 hover:from-purple-500 hover:to-pink-500 transition "
             >
               Vaciar carrito
             </button>
