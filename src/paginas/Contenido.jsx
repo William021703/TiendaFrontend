@@ -127,7 +127,7 @@ export function Contenido() {
             ) : (
               <button
                 className="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-linear-65 from-purple-500 to-pink-500 
-                    transition-transform transition-colors duration-300 transform hover:scale-105"
+                    transition-transform transition-colors duration-300 transform hover:scale-105 cursor-pointer"
                 onClick={HandleAbrirCerrar}
               >
                 Agregar Producto
