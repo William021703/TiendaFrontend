@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 export function TopNombre({ usuarioInfo }) {
   const [siglas, setSiglas] = useState("");
+  const [cerrarSesion, setCerrarSesion] = useState(true);
 
   const navigate = useNavigate();
   function HandleCerrarSesion() {
@@ -25,14 +26,23 @@ export function TopNombre({ usuarioInfo }) {
     setSiglas(juntar.toUpperCase());
   }, [usuarioInfo]);
 
+  const ponerCerrarSesion = ()=>{
+    setCerrarSesion(false)
+  }
+   const ponerSigla = ()=>{
+    setCerrarSesion(true)
+  }
+
   return (
     <div>
       <button
-        className="hover:border-b-4 border-b-0
+        className="hover:border-b-2 border-b-0 cursor-pointer
       hover:border-indigo-500 px-4 py-2 transition-color duration-300"
         onClick={HandleCerrarSesion}
+        onMouseEnter={ponerCerrarSesion}
+        onMouseLeave={ponerSigla}
       >
-        {siglas}
+        {cerrarSesion? siglas : "Cerrar Sesion"}
       </button>
     </div>
   );
