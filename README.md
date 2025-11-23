@@ -18,6 +18,8 @@ Usuario: william
 
 Contraseña: 1234
 
+NOTA: para agregar el producto, en el input de la img debes poner la URL de la img. osea busca una imb y copia la url
+
 💳 Pago de prueba (Stripe)
 
 Usar estos datos para completar el checkout:
